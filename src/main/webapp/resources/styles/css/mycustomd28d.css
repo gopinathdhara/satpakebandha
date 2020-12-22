@@ -1,0 +1,310 @@
+.memlli{
+	font-size: 15px;
+}
+.mandtry{
+	color:red;
+}
+.mytext-color{
+	color:#f58320 !important;
+	/*background: #f58320;
+    color: #f1f1f1;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 6px;
+    border-radius: 7px;*/
+    font-weight: bolder;
+   
+}
+.mytxtdesgn{
+	color: #f58320 !important;
+    font-weight: bold;
+} 
+
+.desclist{
+	font-size:15px;
+}
+.divmnhg{
+	min-height: 550px; 
+}
+.hdlst{
+	color: #f58320;
+	text-transform:capitalize;
+}
+.menuzord-responsive .showhide{
+	background: none;
+}
+.texthdbld{
+	font-weight:bolder;
+}
+.srhdimg{
+	
+    width: 60%;
+}
+.srhdprofimg{
+	 width: 100%;
+}
+.srhdimgdv{
+	width: 20%;
+    float: left;
+}
+.homesrcinp{
+	color: black !important;
+    border: 1px solid black;
+}
+.homesrchd{
+	color:#000;
+	font-family: 'Poppins', sans-serif;
+	font-size:30px;
+    text-transform:capitalize;
+}
+.usr_fnm{
+	font-family: 'Poppins', sans-serif;
+    color: #f58320;
+    text-transform:capitalize;
+}
+.usr_desg{
+	font-size: 14px;
+	text-transform:capitalize;
+	font-weight: bold;
+    color: #5377da;
+}
+.usr_snd_int{
+	font-size: 14px;
+	text-transform:capitalize;
+	color: #f58320;
+	font-weight:bold;
+}
+.usr_snd_shr{
+	font-size: 14px;
+	text-transform:capitalize;
+	color: green;
+	font-weight:bold;
+}
+.usr_snd_blc{
+	font-size: 14px;
+	text-transform:capitalize;
+	color:red;
+	font-weight:bold;
+}
+.allmmhd{
+	font-family: 'Poppins', sans-serif;
+    text-transform:capitalize;
+    color: green;
+    text-transform:capitalize;
+}
+.prfboxshd {
+	/*box-shadow: 1px 0 8px 3px #eee;*/
+    border-radius: 12px;
+}
+
+.matsitelogo{
+	width:200px;
+}
+@media only screen and (max-width: 768px) {
+	.matsitelogo{
+		width:140px;
+		margin-left: 10px;
+	}
+}
+/*notification*/
+.notification-box {
+    width: 350px !important;
+    background: #fff;
+    float: left;
+    position: relative;
+    padding: 30px;
+    margin-top: 0;
+    opacity: 0;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.7);
+    -webkit-transition: .1s ease-out;
+    transition: all .1s ease-out;
+    opacity: 1;
+    visibility: visible;
+    z-index: 999999999;
+    max-height:450px;
+    height: auto;
+    overflow-y:scroll;
+}
+.notfy-head_innr{
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    text-align: left;
+    color: #424242;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 12px;
+}
+.nottxthd {
+    font-size: 13px;
+    letter-spacing: .7px;
+    font-weight: 400;
+    color: #333;
+}
+.nota-3 {
+    font-weight: 700;
+    color: #ed6402!important;
+    font-size: 12px;
+    letter-spacing: .5px;
+    text-decoration: none!important;
+}
+.clor-grey1-notdt{
+	color: #666;
+	font-size: 12px;
+    letter-spacing: .5px;
+    float: right!important;
+}
+.viewalnofy{
+	
+    background-color: #ff9902 !important;
+    color: #fff !important;
+    line-height: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px ;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+	margin:10px;
+	text-align:center;
+	
+}
+.notifyimg {
+    float: left;
+    width: 30px;
+    margin-top: 0px;
+}
+.notull{
+	float: right;
+    max-height: 400px;
+    display: block;
+    margin-top: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .dekntf{
+  	display:none !important;
+  }
+  .mbntf{
+  	display:block !important;
+  }
+}
+
+/*notification*/
+/*home page*/
+.discription, .discription.style2{
+	
+	background:none !important;
+	width:50% !important;
+}
+
+.cd-timeline-content .discription img{
+	width:100% !important;
+	border-radius:10px;
+	margin-right: 30px;
+}
+
+.cd-timeline-content .discription {
+  
+    width: 50% !important;
+    
+}
+.hmgrlcoupimg{
+	height:240px;
+	width:100%;
+}
+.hmmancoupimg{
+	height:240px;
+	width:50%;
+}
+.commmarryimg{
+	width:100%;
+	height: 150px;
+}
+@media only screen and (max-width: 768px) {
+	
+	.cd-timeline-content .discription {
+  
+    width: 90% !important;
+    
+	}
+}
+/*home page*/
+/* The Modal (background) */
+/*
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 999; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: none; 
+  background-color: none; 
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 55%;
+}
+
+
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+*/
+@media only screen and (max-width: 768px) {
+.modal-body h4{
+	font-size: 14px;
+}
+}
+/*mail box notify*/
+#mailbox_notify_hd_count{
+	
+    font-weight: bolder;
+    padding: 2px 6px;
+    border-radius: 25px;
+    font-size: 12px;
+    margin-top: -1px;
+}  
+    
+.msg_notify_hd_count{
+	font-weight: bolder;
+    padding: 2px 6px;
+    border-radius: 25px;
+    font-size: 12px;
+    margin-top: -1px;
+}   
+
+/*home*/
+.fshmhd{
+	font-size: 13px;
+}
+.fshmpar{
+	font-size: 12px;
+}
+/*menu*/
+.menuzord-menu > li > a {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    padding: 28px 5px !important;
+}

@@ -1,0 +1,55 @@
+.headerbckcol{
+	background: #5cbb67 !important;
+	color:#fff;
+}
+.menuzord-menu > li > a{
+	color:#fff;
+}
+.menuzord.red .menuzord-menu > li:hover > a{
+	color:blanchedalmond !important;
+	font-weight: bold;
+}
+menuzord.red .menuzord-menu > li.active > a{
+	
+	color:#fff;
+}
+
+.menuzord.red .menuzord-menu ul.dropdown li:hover > a{
+		color:black;
+
+}
+	
+@media only screen and (max-width: 768px) {
+.menuzord-menu > li > a {
+    color: black;
+}
+}
+
+.matsitelogo1{
+	width:200px;
+}
+
+@media only screen and (max-width: 768px) {
+.matsitelogo1{
+	width:140px;
+	margin-left: 10px;
+}
+}
+
+.mgtop{
+	margin-top:50px;
+}
+.mgtop1{
+	margin-top:110px;
+}
+@media only screen and (max-width: 768px) {
+	
+	.mgtop1{
+	margin-top:50px;
+	}
+}
+.bordrbox{
+	border: 1px solid #dadada;
+    background: #ffffff;
+    padding:20px;
+}
