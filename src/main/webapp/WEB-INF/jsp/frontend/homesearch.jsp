@@ -632,7 +632,7 @@ $(document).ready(function(){
 															  }
 														 
 														
-																 str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)"  class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+'</a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"> <i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'" ><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
+																 str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)"  class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+'</a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"> <i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" class="usr_snd_mssg" id="usr_snd_mssg-'+val.id+'">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'" ><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
 															 
 													
 													
@@ -860,7 +860,7 @@ $(document).ready(function(){
 												  }
 											 
 											 	
-												 	str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)" class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+'</a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"> <i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'"><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
+												 	str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)" class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+'</a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"> <i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" id="usr_snd_mssg-'+val.id+'" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'"><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
 												
 										
 										
@@ -953,7 +953,7 @@ $(document).ready(function(){
 						  }
 					 
 					
-						 	str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)" class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+'</a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"> <i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'"><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
+						 	str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)" class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+'</a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"> <i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" id="usr_snd_mssg-'+val.id+'" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'"><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
 						 
 						 
 					 
@@ -1133,7 +1133,7 @@ $(document).ready(function(){
 						 
 						 
 					          
-							 str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)" class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+' </a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"><i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'" ><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
+							 str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)" class="calluser" id="calluser-'+val.id+'"><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p><ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+' </a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"><i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="javascript:void(0)" id="usr_snd_mssg-'+val.id+'" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13 viewprof" href="javascript:void(0)"  id="mat-'+val.matrimony_id+'" ><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
 							 
 							 
 						 
@@ -1323,21 +1323,57 @@ $(document).on("click",".usr_snd_mssg",function(){
 	var userid_val=$("#userid_val").val();
 	if(userid_val==0)
 		{
-			
-			
 			swal("", "Want to send her message?Register right away", "");
+		}else{
+			var receiver_id_str=$(this).attr("id");
+			var res = receiver_id_str.split("-");
+			var receiver_id=res[1];
+			window.open(
+					  'chatwithmember?receiverid='+receiver_id,
+					  '_blank' // <- This is what makes it open in a new window.
+					);
 		}
 	
 })
-
+//check if user is premium user or not
 $(document).on("click",".calluser",function(){
 	
 	var userid_val=$("#userid_val").val();
 	if(userid_val==0)
 		{
-			
-			
 			swal("", "Want to view her phone no?Register right away", "");
+		}else{
+			var receiver_id_str=$(this).attr("id");
+			var res = receiver_id_str.split("-");
+			var receiver_id=res[1];
+			//alert(receiver_id);
+			var type='ajax';
+			$.ajax({
+				
+				  url: "check_ifpremium_user",
+				  cache: false,
+				  type: "POST",
+				  data: "type="+type+"&receiver_id="+receiver_id,
+				  async: false,
+				  dataType: 'html',
+				  //success callback
+				  success: function(html){
+					  
+					  var response = JSON.parse(html);
+					 
+					  $.each(response, function (key, val) {
+						  if(val.premiumflag==1)
+							  {
+							  	var phone_no=val.phone_no;
+							 	 swal("Phone No:", phone_no, "success");
+							  }
+						  else
+							  {
+							  	swal("", "Please take membership to view phone no.", "error");
+							  }
+					  })
+				  }
+			});
 		}
 	
 })
