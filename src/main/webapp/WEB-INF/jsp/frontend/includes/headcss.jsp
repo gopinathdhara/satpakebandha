@@ -2,10 +2,10 @@
     pageEncoding="ISO-8859-1"%>
 <head>
 <!-- Meta Tags -->
-<title>Best Trusted Bengali Matrimony Site in Kolkata - 7pake Bandha</title>
-<meta name="description" content="Waiting for your Best Perfect Life Partner? Come 7pake Bandha, is the Trusted Bengali Matrimony Site for Bengalis in Kolkata. Connecting Thousands of Bengali life-partner." />
-<meta name="DC.Title" content="Best Trusted Bengali Matrimony Site for Bengalis in Kolkata - 7pake Bandha" />
-<meta name="DC.Description" content="Waiting for your Best Perfect Life Partner? Come 7pake Bandha, is the Trusted Bengali Matrimony Site for Bengalis in Kolkata. Connecting Thousands of Bengali life-partner." />
+<title>Best Trusted Bengali Matrimony Site in Howrah, Kolkata - 7pake Bandha</title>
+<meta name="description" content="Waiting for your Best Perfect Life Partner? Come 7pake Bandha, is the Trusted Bengali Matrimony Site for Bengalis in Howrah, Kolkata. Connecting Thousands of Bengali life-partner." />
+<meta name="DC.Title" content="Best Trusted Bengali Matrimony Site for Bengalis in Howrah, Kolkata - 7pake Bandha" />
+<meta name="DC.Description" content="Waiting for your Best Perfect Life Partner? Come 7pake Bandha, is the Trusted Bengali Matrimony Site for Bengalis in Howrah, Kolkata. Connecting Thousands of Bengali life-partner." />
 <meta name="robots" content="all, index, follow"/>
 <meta name="robots" content="noodp,noydir"/>
 <meta name="geo.region" content="IN-WB" />
