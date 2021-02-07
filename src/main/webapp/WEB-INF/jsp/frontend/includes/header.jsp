@@ -272,4 +272,11 @@ $(document).ready(function(){
 		audioElm.play();
 	});
 	
+	audioElm.addEventListener("canplaythrough", function () {
+        setTimeout(function(){
+        	audioElm.pause();
+            //alert("Audio Stop Successfully");
+        },
+        30000);
+}, false); 
 </script>
