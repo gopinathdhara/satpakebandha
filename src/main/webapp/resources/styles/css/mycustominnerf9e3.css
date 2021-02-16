@@ -54,9 +54,9 @@ menuzord.red .menuzord-menu > li.active > a{
 }
 }
 .bordrbox{
-	border: 1px solid #f58320;
+	/*border: 1px solid #f58320;*/
     background: #ffffff;
-    padding:20px;
+    padding:0px;
 }
 
 /*advance search */
@@ -490,7 +490,52 @@ a:hover{
     margin-bottom: 20px;
 }
 .advsdbar{
-	border: 1px solid #ccc;
+	border: 1px solid #f58320;
     padding: 15px;
     border-radius:5px;
+}
+.prfismangalik{
+	color: blue;
+    font-family: cursive;
+}
+.keywd_msg_hght{
+	color:black;
+	font-size: 15px;
+	font-weight:bold;
+	margin-top:7px;
+	font-family: serif;
+}
+.keywd_err_msg{
+	color: red;
+    font-size: 15px;
+    font-family: serif;
+}
+.keywd_msg_hght_note{
+	color:#c14444;
+	font-weight:bold;
+	font-size: 14px;
+	margin-top:7px;
+	font-family: serif;
+}
+#containr >.post {
+	background: #f0f3fc;
+	padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #888888;
+} 
+.schedule-box {
+	background: #f0f3fc;
+	padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #888888;
+}
+.img-responsive {
+	border-radius: 10px;
+}
+.svsrchart{
+	background:none!important;
+	border: 1px solid #ccc!important;
+	box-shadow:none!important;
 }

@@ -11,10 +11,10 @@ public class Common_Info {
 	//TEST SECRET KEY zPHiblWADUHTzEtMKNRwNXIy
 	//live api key rzp_live_cJixt1qaY8lKn9
 	//live secret key K1ymGpj8pmr9ehRb2HF0Ujkc
-	//#############razor pay credentials############
+	//#############razor pay credentials############ 
 	
 	public static String apikey="rzp_live_cJixt1qaY8lKn9";
 	public static String secretkey="K1ymGpj8pmr9ehRb2HF0Ujkc";
-	public static int perpage=20;
+	public static int perpage=10;
 	public static int adminperpage=10;
 }

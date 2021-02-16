@@ -236,7 +236,17 @@
 											
 						                </div>
 						                
-						                
+						   <div class="row">
+			               		<div class="form-group col-md-12">
+			               		 
+			               				 <form:radiobutton path="is_mangalik" value="1" /> <span class="prfismangalik">Mangalik</span> 
+										 <form:radiobutton path="is_mangalik" value="2" /> 	<span class="prfismangalik">Non-Mangalik</span> 
+ 										 <form:radiobutton path="is_mangalik" value="3 " /> <span class="prfismangalik">Part-Mangalik</span>  
+ 										
+ 										 <font color='red'><form:errors path='is_mangalik' /></font>
+			               		</div>
+			               </div>             
+						   
 						   <div class="row">
 						   			<div class="form-group col-md-6">
 						                  <label for="form_name">Phone No <span class="mandtry">*</span></label>

@@ -96,6 +96,9 @@ public class Profile {
 	@Min(value=1, message="Please select complexion")
 	private int complexion;
 	
+	@Min(value=1, message="Please select if you are Mangalik or not")
+	private int is_mangalik;
+	
 	private int gon_info_id;
 	private int rashi_info_id;
 	private int blood_group_id;
@@ -454,6 +457,12 @@ public class Profile {
 	}
 	public void setBody_type(int body_type) {
 		this.body_type = body_type;
+	}
+	public int getIs_mangalik() {
+		return is_mangalik;
+	}
+	public void setIs_mangalik(int is_mangalik) {
+		this.is_mangalik = is_mangalik;
 	}
 	
 	

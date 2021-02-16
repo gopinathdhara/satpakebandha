@@ -41,7 +41,29 @@
             <div class="row">
               <div class="col-md-8 col-md-offset-2 text-center pt-60 wow fadeInUp animation-delay2">
             		<h1 class="font-Playfair text-white">Lakhs of blessed Marriages!</h1>
+            		
+            		<% 
+						int home_verify_userid=0; 
+						try
+						{
+							
+							if(session.getAttribute("sess_usr_id").toString()!=null)
+							{
+								home_verify_userid=Integer.parseInt(session.getAttribute("sess_usr_id").toString());
+								
+							
+							}
+							
+						}catch(Exception e)
+						{
+							
+						}
+					
+					%>
+            		
+            		<% if(home_verify_userid==0){ %>
 					<h2 class="text-white"><a href="register" class="btn btn-success btn-lg" style="font-size: 16px;background: #3f3fff;font-family: sans-serif;">REGISTER FREE</a></h2>
+					<%} %>
                 <br><br>
                 
                 <img src="<c:url value="resources/images/wedding-frame-after.png" />" alt="wedding-frame-after"/>

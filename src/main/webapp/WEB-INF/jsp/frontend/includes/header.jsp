@@ -100,6 +100,7 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
                   <ul class="dropdown">
                     <li><a href="regularsearch">Regular Search</a></li>
                     <li><a href="regularsearch"> Search By ID</a></li>
+                    <li><a href="keywordsearch"> Keyword Search </a></li>
                     <li><a href="savesearchdetails"> Saved Search</a></li>
                     
                   </ul>
@@ -116,6 +117,8 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
                 <li><a href="javascript:void(0)">Members</a>
 			                  <ul class="dropdown">
 			                   <li><a href="allusers?paramtype=all">All Members</a></li>
+			                   <li><a href="allusers?paramtype=new">New Members</a></li>
+			                   <li><a href="allusers?paramtype=premium">Premium Members</a></li>
 			                    
 			                  </ul>
 				</li>

@@ -2495,5 +2495,132 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		}
 				
 	//########################advance search in sidebar##########################
+	
+	//###################################keyword search ####################################  
+	
+	public List<User> get_all_userlist_on_page_load_keyword_search(long userid,String input_keyword,int order_by_no)
+	{
+		String oppositegender="";
+		//get user details
+		String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+		try {
+		String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
+	
+		if(gender.equals("Male"))
+		{
+			 oppositegender="Female"; 
+		}
+		else
+		{
+			oppositegender="Male";
+		}
+		
+		}catch (Exception e) {
+			
+		}
+		
+		
+		String sql="select t.* from ( (select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+		
+		String[] searchwords = input_keyword.split(",");
+		String[] searchwords_yrs_chk_arr;
+		String search_keyword="";
+		String search_keyword1="";
+		int form_age=0;
+		int to_age=0;
+		for(int i=0;i<searchwords.length;i++)
+		{
+			boolean chk_sub_str=searchwords[i].toLowerCase().contains("-");
+			String replace_search_string="";
+			replace_search_string=searchwords[i].replace("years","");
+			replace_search_string=replace_search_string.replace("year","");
+			if(chk_sub_str)
+			{
+				searchwords_yrs_chk_arr = replace_search_string.split("-");
+				form_age=Integer.parseInt(searchwords_yrs_chk_arr[0].trim());
+				to_age=Integer.parseInt(searchwords_yrs_chk_arr[1].trim());
+				
+			}
+			search_keyword=searchwords[i].trim();
+			sql+=" and (hghed.name like '%"+search_keyword+"%' or rg.name like '%"+search_keyword+"%' or ca.name like '%"+search_keyword+"%' or cte.name like '%"+search_keyword+"%' or sts.name like '%"+search_keyword+"%' or u.name like '%"+search_keyword+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"')  )"; 
+		}
+		
+		
+		
+		 sql+=" ) ";
+		 sql+="union (select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and (u.id>0 and (";
+		
+		String[] searchwords2 = input_keyword.split(",");
+		//System.out.println(Arrays.toString(words));
+		
+		for(int i=0;i<searchwords2.length;i++)
+		{
+			
+			search_keyword1=searchwords2[i].trim();
+			sql+="  (hghed.name like '%"+search_keyword1+"%' or rg.name like '%"+search_keyword1+"%' or ca.name like '%"+search_keyword1+"%' or cte.name like '%"+search_keyword1+"%' or sts.name like '%"+search_keyword1+"%' or u.name like '%"+search_keyword1+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword1+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"') )  ";
+			
+			if(i+1<=(searchwords2.length-1))
+			{
+				sql+=" or ";
+			}
+				
+			
+		}
+		
+		sql+=" ))   ) ) t  limit "+order_by_no+","+Common_Info.perpage;
+		
+		System.out.println(sql);
+		order_by_no=order_by_no+Common_Info.perpage;
+		final int order_by_no_new=order_by_no;
+		return template.query(sql, new ResultSetExtractor<List<User>>() {
+			public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {
+				// TODO Auto-generated method stub
+			
+				List<User> list1=new ArrayList<User>();
+				while(rs.next())
+				{
+					//check profile image
+					String profile_img=rs.getString(5);
+					if(profile_img==null)
+					{
+						profile_img="";
+					}
+					String state_name=rs.getString(12);
+					if(state_name==null)
+					{
+						state_name="";
+					}
+					String city_name=rs.getString(13);
+					if(city_name==null)
+					{
+						city_name="";
+					}
+					User uobj=new User();
+					uobj.setId(rs.getLong(1));
+					uobj.setName(rs.getString(2));
+					uobj.setDob(rs.getString(3));
+					uobj.setGender(rs.getString(4));
+					uobj.setProfile_image(profile_img);
+					uobj.setOccupation_name(rs.getString(6));
+					uobj.setHeight_value(rs.getString(7));
+					uobj.setReligion_name(rs.getString(8));
+					uobj.setCaste_name(rs.getString(9));
+					uobj.setHighest_education(rs.getString(10));
+					uobj.setCountry_name(rs.getString(11));
+					uobj.setState_name(state_name);
+					uobj.setCity_name(city_name);
+					uobj.setUsername(rs.getString(14));
+					uobj.setMatrimony_id(rs.getString(15));
+					uobj.setOrder_by_no(order_by_no_new);
+					list1.add(uobj);
+					
+					
+				}
+				return list1;
+			}
+			
+		});
+	} 
+	   //################################keyword search ###########################################
  }
 

@@ -1798,4 +1798,76 @@ public class SearchController {
        return state_list_with_count;
     }
   //##########################advance search in sidebar###############################
+    
+    //################################keyword search ###########################################
+     
+    
+  	@RequestMapping("/keywordsearch")     
+      public String keywordsearch(Model m,HttpServletRequest request,HttpServletResponse response,HttpSession session){  
+  		
+  		//###########check login###############
+  		long userid=(long) 0;
+  		try
+  		{
+  		 userid=Long.parseLong(session.getAttribute("sess_usr_id").toString());
+  		}
+  		catch(Exception e)
+  		{
+  			 userid=(long) 0;
+  			 return "redirect:/login";
+  			 
+  		}
+  	    //###########check login###############
+  		
+          return "frontend/keywordsearch";   
+      }
+  	
+  	@RequestMapping("/keywordsearchsave")    
+    public String keywordsearchsave(Model m,HttpServletRequest request,HttpServletResponse response,HttpSession session){  
+	
+		//###########check login###############
+		long userid=(long) 0;
+		try
+		{
+		 userid=Long.parseLong(session.getAttribute("sess_usr_id").toString());
+		}
+		catch(Exception e)
+		{
+			 userid=(long) 0;
+			 return "redirect:/login";
+			 
+		}
+		//###########check login###############
+		
+		
+        return "frontend/keyword_search_result";   
+    }
+  	
+  	@RequestMapping(value="/get_all_userlist_on_page_load_keyword_search",method = RequestMethod.POST)  
+    public void get_all_userlist_on_page_load_keyword_search(Model m,HttpServletRequest request,HttpServletResponse response,HttpSession session) throws IOException{  
+		 
+		//###########check login###############
+		long userid=(long) 0;
+		try
+		{
+		 userid=Long.parseLong(session.getAttribute("sess_usr_id").toString());
+		}
+		catch(Exception e)
+		{
+			 userid=(long) 0;
+			// return "redirect:/login";
+			 
+		}
+		//###########check login###############
+		 String input_keyword=request.getParameter("input_keyword").toString();
+		 int order_by_no=Integer.parseInt(request.getParameter("order_by_no"));
+		 Gson gsonBuilder = new GsonBuilder().create();
+    	 List<User> l1=SrchDao.get_all_userlist_on_page_load_keyword_search(userid,input_keyword,order_by_no);
+    	 String jsonFromJavaArrayList = gsonBuilder.toJson(l1);
+		 response.setContentType("application/json");
+	     response.setCharacterEncoding("UTF-8");
+	     response.getWriter().write(jsonFromJavaArrayList);
+           
+    }
+    //################################keyword search ########################################### 
 }

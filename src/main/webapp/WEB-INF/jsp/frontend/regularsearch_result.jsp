@@ -63,7 +63,7 @@
           <% } %>
           
           
-          <div class="col-sm-12 col-md-9 blog-pull-right prfboxshd" style="padding:20px;margin-top: 35px;">
+          <div class="col-sm-12 col-md-9 blog-pull-right prfboxshd" style="margin-top: 10px;">
               <div class="row list-dashed prfboxshd bordrbox" id="containr" >
               
               </div>
@@ -1436,6 +1436,8 @@ $(document).ready(function(){
 				  
 					  var callimg=$("#urlimg").val()+'call-icon.png';
 					  
+					  var matchofdayimg=$("#urlimg").val()+"matchofday.png";
+					  
 					  var cstname='';
 					  var lastpostid=val.id;
 					  $("#lastpostid").val(lastpostid);
@@ -1446,7 +1448,15 @@ $(document).ready(function(){
 						  }
 					  	 //find out match score
 					 	 var minrandom=getRandomInt(80,100);
-					 	 var matchscore='<div><label for="matchscore" style="color:green;font-weight:bold;">Match Score: '+minrandom+'% </label>&nbsp;<progress value="'+minrandom+'" max="100" title="'+minrandom+' Complete">'+minrandom+'</progress></div>';
+					  	 if(key==0)
+					  	  {
+					  		  var matchofdayimg='<img src="'+matchofdayimg+'"/><br/><br/>';
+					  	  }
+					  	 else
+					  	 {
+					  		var matchofdayimg="";
+					  	 }
+					 	 var matchscore='<div>'+matchofdayimg+'<label for="matchscore" style="color:green;font-weight:bold;">Match Score: '+minrandom+'% </label>&nbsp;<progress value="'+minrandom+'" max="100" title="'+minrandom+' Complete">'+minrandom+'</progress></div>';
 				          
 						 str+='<article class="post clearfix mb-50"><div class="col-sm-2"><div class="entry-header"><div class="post-thumb"> <img class="img-responsive img-fullwidth rspnsurimg" src="'+demoimg+'" alt=""> </div></div></div><div class="col-sm-10"><div class="entry-content mt-0"><a href="javascript:void(0)"><h4 class="entry-title mt-0 pt-0 usr_fnm">'+val.name+'<a href="javascript:void(0)" id="chckmemprm-'+val.id+'" class="chckmemprm" ><img src="'+callimg+'" class="callimgg"/></a></h4></a><ul class="list-inline font-12 mb-20 mt-10"><li> <a href="javascript:void(0)" class="usr_desg">'+val.occupation_name+'</a></li></ul><p class="mb-30"><span class="texthdbld"> Date of birth  : </span> '+val.dob+'  , <span class="texthdbld"> Religion : </span> '+val.religion_name+cstname+' ,<span class="texthdbld"> Education  : </span>'+val.highest_education+'  , <span class="texthdbld"> State  : </span> '+ val.state_name +' ,<span class="texthdbld"> City : </span>'+val.city_name+'</p> '+matchscore+' <ul class="list-inline like-comment pull-left font-12"><li><a href="javascript:void(0)" class="usr_snd_int" id="interest-'+val.id+'">'+likestr+'</a></li><li><a href="javascript:void(0)" class="usr_snd_shr" id="shortlist-'+val.id+'"><i class="fa fa-star" aria-hidden="true"></i> Shortlist</a></li><li><a href="chatwithmember?receiverid='+val.id+'" target="_blank" class="usr_snd_mssg">Message </a></li></ul><a class="pull-right text-gray font-13" href="profiledetails?usermatrimonyid='+val.matrimony_id+'" target="_blank" ><i class="fa fa-angle-double-right text-theme-colored"></i> View Profile</a></div></div></article>';
 						 

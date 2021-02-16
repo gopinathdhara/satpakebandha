@@ -39,14 +39,15 @@
           <div class="blog-posts" >
           
             <div class="col-md-7 prfboxshd bordrbox">
-              <div class="row list-dashed" id="containr">
+            <!-- list-dashed -->
+              <div class="row" id="containr">
               
 				<c:if test="${empty sList}">
 					<p>No Record Found.</p>
 				</c:if>
               <c:forEach items="${sList}" var="sList1">
               
-	                <article class="post clearfix mb-50" style="padding:10px;">
+	                <article class="post clearfix mb-50 svsrchart" style="padding:10px;">
 	                  
 	                  <div class="col-sm-12">
 	                    <div class="entry-content mt-0">

@@ -104,7 +104,7 @@ public class User {
 	private int email_verification_status;
 	private int status;
 	
-	
+	private int is_mangalik;
 	
 	public int getStatus() {
 		return status;
@@ -486,6 +486,12 @@ public class User {
 	}
 	public void setPremiumflag(int premiumflag) {
 		this.premiumflag = premiumflag;
+	}
+	public int getIs_mangalik() {
+		return is_mangalik;
+	}
+	public void setIs_mangalik(int is_mangalik) {
+		this.is_mangalik = is_mangalik;
 	}
 	
 	

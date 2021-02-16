@@ -124,7 +124,17 @@
 		                    <li><i class="fa fa-map-marker mr-5"></i> 89 Newyork City.</li>
 		                  </ul>  -->
 		                  	<p><span class="texthdbld">Date of birth : </span>${uobj.getDob()}</p>
-		                 
+		                  	
+		                 	<c:if test="${uobj.getIs_mangalik()==1}">
+		                  		<p class="prfismangalik">Mangalik</p>
+		                  	</c:if>
+		                  	<c:if test="${uobj.getIs_mangalik()==2}">
+		                  		<p class="prfismangalik"> Non Mangalik</p>
+		                  	</c:if>
+		                  	<c:if test="${uobj.getIs_mangalik()==3}">
+		                  		<p class="prfismangalik"> Part Mangalik</p>
+		                  	</c:if>
+		                  	
 		                  	<p><span class="texthdbld">Religion : </span>${uobj.getReligion_name()}</p>
 		                  	<p><span class="texthdbld">Caste : </span>${uobj.getCaste_name()}</p>
 		                  	<p><span class="texthdbld">Mother Tongue : </span>${uobj.getMother_tongue_name()}</p>

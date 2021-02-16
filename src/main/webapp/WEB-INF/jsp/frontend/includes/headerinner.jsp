@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.beans.Common_Info" %> 
-  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=3.8" />" >
+  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=4.6" />" >
 <% 
 int userid=0;
 try
@@ -101,6 +101,7 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
                   <ul class="dropdown">
                     <li><a href="regularsearch">Regular Search</a></li>
                     <li><a href="regularsearch"> Search By ID</a></li>
+                    <li><a href="keywordsearch"> Keyword Search </a></li>
                     <li><a href="savesearchdetails"> Saved Search</a></li>
                     
                   </ul>
