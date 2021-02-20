@@ -34,13 +34,13 @@
       <div class="container ">
       
       
-      <p style="font-size: 20px;color: #212529;letter-spacing: 1.5px;text-align: left;">Keyword Search Results </p>
+      <p class="srhdlne">Keyword Search Results </p>
       
       <div class="row">
       
            <div class="col-sm-12 col-md-9 blog-pull-right prfboxshd" style="padding:20px">
             
-              <div class="row list-dashed prfboxshd bordrbox" id="containr">
+              <div class="row  prfboxshd bordrbox" id="containr">
               
               </div>
               	<div class="process-comm"  id="loaderspinn" style="display:none;text-align:center" >
@@ -150,7 +150,7 @@ $(document).ready(function(){
 		                                }
 										
 										
-										var input_keyword=$("#input_keyword").val();
+										var input_keyword=$("#input_keyword").val().trim();
 										surl="get_all_userlist_on_page_load_keyword_search";
 										
 										var datavalues='lastpostid='+lastpostid+"&input_keyword="+input_keyword+"&order_by_no="+lastpostid;
@@ -267,7 +267,7 @@ $(document).ready(function(){
 									}
 									
 								
-								var input_keyword=$("#input_keyword").val();
+								var input_keyword=$("#input_keyword").val().trim();
 								surl="get_all_userlist_on_page_load_keyword_search";
 								
 								var datavalues='lastpostid='+lastpostid+"&input_keyword="+input_keyword+"&order_by_no="+lastpostid;
@@ -368,7 +368,7 @@ $(document).ready(function(){
 	{
 		type='ajax';
 		var order_by_no=0;
-		var input_keyword=$("#input_keyword").val();
+		var input_keyword=$("#input_keyword").val().trim();
 		$.ajax({
 			
 			  url: "get_all_userlist_on_page_load_keyword_search",
@@ -435,7 +435,10 @@ $(document).ready(function(){
 				  });
 				  
 				  //console.log(str);
-				  
+				  if(str=="")
+					  {
+					  	str='<div class="post clearfix mb-50"><h5>No Record Found. Please Search With Proper Keyword.</h5></div>';
+					  }
 				  $("#containr").html(str);
 			  }
 		});	  

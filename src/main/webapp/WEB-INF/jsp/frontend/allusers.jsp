@@ -34,13 +34,13 @@
       
       <div id="side-panel-trigger" class="side-panel-trigger" style="display:none"><a href="#"><i class="fa fa-filter" aria-hidden="true" class="advfiltermnu" style="color: #ff9902;font-size: 45px;"></i></a></div>
       
-      <p style="font-size: 20px;color: #212529;letter-spacing: 1.5px;text-align: left;">All Registered Members </p>
+      <p class="srhdlne">All Registered Members </p>
       
       <div class="row">
       
            <div class="col-sm-12 col-md-9 blog-pull-right prfboxshd" style="padding:20px">
             
-              <div class="row list-dashed prfboxshd bordrbox" id="containr">
+              <div class="row  prfboxshd bordrbox" id="containr">
               
               
               

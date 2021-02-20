@@ -2526,6 +2526,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		String[] searchwords_yrs_chk_arr;
 		String search_keyword="";
 		String search_keyword1="";
+		String search_keyword_edu="";
 		int form_age=0;
 		int to_age=0;
 		for(int i=0;i<searchwords.length;i++)
@@ -2541,8 +2542,10 @@ public Boolean partner_preferences_save(final Regular_Search e){
 				to_age=Integer.parseInt(searchwords_yrs_chk_arr[1].trim());
 				
 			}
-			search_keyword=searchwords[i].trim();
-			sql+=" and (hghed.name like '%"+search_keyword+"%' or rg.name like '%"+search_keyword+"%' or ca.name like '%"+search_keyword+"%' or cte.name like '%"+search_keyword+"%' or sts.name like '%"+search_keyword+"%' or u.name like '%"+search_keyword+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"')  )"; 
+			search_keyword=searchwords[i].trim(); 
+			search_keyword_edu=searchwords[i].trim().replace(".","");
+			//System.out.print("edu"+search_keyword_edu);
+			sql+=" and (REPLACE(TRIM(hghed.name),'.','') = '"+search_keyword_edu+"' or rg.name like '%"+search_keyword+"%' or ca.name like '%"+search_keyword+"%' or cte.name = '"+search_keyword+"' or sts.name like '%"+search_keyword+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"')  )"; 
 		}
 		
 		
@@ -2557,7 +2560,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		{
 			
 			search_keyword1=searchwords2[i].trim();
-			sql+="  (hghed.name like '%"+search_keyword1+"%' or rg.name like '%"+search_keyword1+"%' or ca.name like '%"+search_keyword1+"%' or cte.name like '%"+search_keyword1+"%' or sts.name like '%"+search_keyword1+"%' or u.name like '%"+search_keyword1+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword1+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"') )  ";
+			sql+="  (REPLACE(TRIM(hghed.name),'.','') = '"+search_keyword_edu+"' or rg.name like '%"+search_keyword1+"%' or ca.name like '%"+search_keyword1+"%' or cte.name = '"+search_keyword1+"' or sts.name like '%"+search_keyword1+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword1+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"') )  ";
 			
 			if(i+1<=(searchwords2.length-1))
 			{

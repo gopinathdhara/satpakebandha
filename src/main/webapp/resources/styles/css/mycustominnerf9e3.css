@@ -407,6 +407,7 @@ a:hover{
 /*payment*/
 .makepaybtn{
 	background:#ff7805;
+	padding:5px;
 }
 .razorpay-payment-button{
 	background:green;
@@ -490,9 +491,9 @@ a:hover{
     margin-bottom: 20px;
 }
 .advsdbar{
-	border: 1px solid #f58320;
+	border: 1px solid #ccc;
     padding: 15px;
-    border-radius:5px;
+    border-radius:10px;
 }
 .prfismangalik{
 	color: blue;
@@ -517,20 +518,35 @@ a:hover{
 	margin-top:7px;
 	font-family: serif;
 }
+
 #containr >.post {
-	background: #f0f3fc;
 	padding: 15px;
     margin: 5px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px #888888;
+    border:1px solid #ccc;
+    text-align: left; 
+    background-color: #fff;
+    border-radius: 20px;
 } 
+
+#containr >.post:hover {
+  
+  border:2px solid #f58320;
+}
+
 .schedule-box {
-	background: #f0f3fc;
 	padding: 15px;
     margin: 5px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px #888888;
+    border:1px solid #ccc;
+    text-align: left; 
+    background-color: #fff;
+    border-radius: 20px;
 }
+
+.schedule-box:hover {
+  /*background-color: #f0f3fc;*/
+  border:2px solid #f58320;
+}
+
 .img-responsive {
 	border-radius: 10px;
 }
@@ -538,4 +554,28 @@ a:hover{
 	background:none!important;
 	border: 1px solid #ccc!important;
 	box-shadow:none!important;
+}
+.srhdlne {
+	font-size: 16px;
+	color: black;
+	letter-spacing: 1.5px;
+	text-align: left;
+}
+.usr_fnm {
+	font-weight:bold;
+	font-size: 19px;
+    letter-spacing: 1.5px;
+    color: #000!important;
+}
+.mb-30{
+	color: black;
+    font-family: sans-serif;
+}
+.dropdown a {
+	color: black;
+    font-family: sans-serif;
+}
+.widget-title {
+	color: black;
+    font-family: sans-serif;
 }

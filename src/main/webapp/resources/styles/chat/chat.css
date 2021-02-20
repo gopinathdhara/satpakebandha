@@ -8,6 +8,8 @@
 		}
 		.chatusrnam{
 			color:#fff;
+			font-size: 16px;
+    		font-family: sans-serif;
 			
 		}
 		.intchatmsg{
@@ -144,7 +146,7 @@
 	}
 		.user_img{
 			height: 70px;
-			width: 70px;
+			width: 66px;
 			border:1.5px solid #f5f6fa;
 		
 		}

@@ -61,12 +61,16 @@ padding:6px !important;
 											                     
 											              		<div class="row">
 															                <div class="form-group col-md-8">
-															                  <label for="form_name">Keyword</label>
+															                  <label for="form_name">Enter Keyword</label>
 															                  
-															                  	<input type="text" value="" name="input_keyword" id="input_keyword" placeholder="Please Enter Keyword" class="form-control" required/>
+															                  	<input type="text" value="" name="input_keyword" id="input_keyword" placeholder="Mahishya, 25-30 years" class="form-control" required/>
 															                  	<span id="keywd_err_msg" class="keywd_err_msg"></span>
-															                  	<p class="keywd_msg_hght">Example 1: hindu, Mahishya, B.Sc, 25 years, howrah</p>
-																				<p class="keywd_msg_hght">Example 2: hindu, Kayastha, B.A , 25-30 years, howrah</p>
+															                  	<p class="keywd_msg_hght">Example 1:  Mahishya, 25-30 years</p>
+															                  	<p class="keywd_msg_hght">Example 2:  Mahishya, B.Sc</p>
+																			
+															                  	
+																				<p class="keywd_msg_hght">Example 3: hindu, Kayastha, B.A , 25-30 years, howrah</p>
+																				<p class="keywd_msg_hght">Example 4: hindu, Mahishya, B.Sc, 25 years, howrah</p>
 																				<p class="keywd_msg_hght_note"><b>**Note ~</b> Please Use Comma Separated String To Search As Shown Above Example.</p>
 																				
 																			</div> 

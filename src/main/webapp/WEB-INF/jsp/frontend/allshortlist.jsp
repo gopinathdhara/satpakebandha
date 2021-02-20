@@ -41,7 +41,7 @@
       
            <div class="col-sm-12 col-md-9 blog-pull-right prfboxshd" style="padding:20px">
             
-              <div class="row list-dashed prfboxshd bordrbox" id="containr">
+              <div class="row prfboxshd bordrbox" id="containr">
               
               
                 

@@ -57,14 +57,14 @@
 				}
 			%>
           <% if(paramtype.equals("allpartnermatch")){%>
-          	<p style="font-size: 20px;color: #212529;letter-spacing: 1.5px;text-align: left; text-transform:capitalize" id="recmsg">Records found based on your partner preferences</p>
+          	<p class="srhdlne" id="recmsg">Records found based on your partner preferences</p>
           <% } else { %>
-          	<p style="font-size: 20px;color: #212529;letter-spacing: 1.5px;text-align: left;text-transform:capitalize" id="recmsg">Records found based on your search</p>
+          	<p class="srhdlne" id="recmsg">Records found based on your search</p>
           <% } %>
           
           
           <div class="col-sm-12 col-md-9 blog-pull-right prfboxshd" style="margin-top: 10px;">
-              <div class="row list-dashed prfboxshd bordrbox" id="containr" >
+              <div class="row  prfboxshd bordrbox" id="containr" >
               
               </div>
               	<div class="process-comm"  id="loaderspinn" style="display:none; text-align:center" >
@@ -1450,7 +1450,13 @@ $(document).ready(function(){
 					 	 var minrandom=getRandomInt(80,100);
 					  	 if(key==0)
 					  	  {
-					  		  var matchofdayimg='<img src="'+matchofdayimg+'"/><br/><br/>';
+					  		 if(paramtype=="allpartnermatch")
+					  			 {
+					  			 var matchofdayimg='<p><img src="'+matchofdayimg+'"/></p>';
+					  			 }else{
+					  				var matchofdayimg="";
+					  			 }
+					  		 
 					  	  }
 					  	 else
 					  	 {
