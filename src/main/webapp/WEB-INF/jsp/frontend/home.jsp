@@ -267,7 +267,7 @@
                   
                    <img src="<c:url value="/resources/images/marry/hommarrygirl.jpeg" />" class="hmgrlcoupimg" alt=""/>
                   
-                  <div class="best-people-details"><a class="font-Playfair" href="javascript:void(0)">Read More</a></div>
+                  <!-- <div class="best-people-details"><a class="font-Playfair" href="javascript:void(0)">Read More</a></div> -->
                 </div>
                 <div class="info">
                   <h4 class="name">Sondha Roy</h4>
@@ -284,7 +284,7 @@
                 <div class="thumb">
                  
                   <img src="<c:url value="/resources/images/marry/homemarryman.jpg"  />" class="hmmancoupimg" alt=""/>
-                  <div class="best-people-details"><a class="font-Playfair" href="javascript:void(0)">Read More</a></div>
+                  <!-- <div class="best-people-details"><a class="font-Playfair" href="javascript:void(0)">Read More</a></div> -->
                 </div>
                 <div class="info">
                   <h4 class="name">Kamal roy</h4>

@@ -2545,7 +2545,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 			search_keyword=searchwords[i].trim(); 
 			search_keyword_edu=searchwords[i].trim().replace(".","");
 			//System.out.print("edu"+search_keyword_edu);
-			sql+=" and (REPLACE(TRIM(hghed.name),'.','') = '"+search_keyword_edu+"' or rg.name like '%"+search_keyword+"%' or ca.name like '%"+search_keyword+"%' or cte.name = '"+search_keyword+"' or sts.name like '%"+search_keyword+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"')  )"; 
+			sql+=" and (REPLACE(TRIM(hghed.name),'.','') like '%"+search_keyword_edu+"%' or rg.name like '%"+search_keyword+"%' or ca.name like '%"+search_keyword+"%' or cte.name = '"+search_keyword+"' or sts.name like '%"+search_keyword+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"')  )"; 
 		}
 		
 		
@@ -2560,7 +2560,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		{
 			
 			search_keyword1=searchwords2[i].trim();
-			sql+="  (REPLACE(TRIM(hghed.name),'.','') = '"+search_keyword_edu+"' or rg.name like '%"+search_keyword1+"%' or ca.name like '%"+search_keyword1+"%' or cte.name = '"+search_keyword1+"' or sts.name like '%"+search_keyword1+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword1+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"') )  ";
+			sql+="  (REPLACE(TRIM(hghed.name),'.','') like '%"+search_keyword_edu+"%' or rg.name like '%"+search_keyword1+"%' or ca.name like '%"+search_keyword1+"%' or cte.name = '"+search_keyword1+"' or sts.name like '%"+search_keyword1+"%' or TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) = '"+search_keyword1+"' or (TIMESTAMPDIFF(YEAR, u.dob, CURDATE()) between  '"+form_age+"' and '"+to_age+"') )  ";
 			
 			if(i+1<=(searchwords2.length-1))
 			{

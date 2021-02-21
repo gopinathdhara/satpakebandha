@@ -101,7 +101,7 @@
 		              			<p class="text-gray">You can edit your profile here.</p>
 		             	
 	             		</div>
-	             		<div class="form-group col-md-12" style="border-bottom: 1px dotted green;">
+	             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 			             	<p class="" style="color: #D30665;font-weight: bold;"> ** Account Details</p>
 			             	
 		             		
@@ -157,7 +157,7 @@
               
 			              		<div class="row">
 				              		
-				             		<div class="form-group col-md-12" style="border-bottom: 1px dotted green;">
+				             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 						             	<p class="" style="color: #1601CF;font-weight: bold;"> ** Basic Details</p>
 						             	
 					             	
@@ -351,7 +351,7 @@
 			              </div>
 			              <div class="row">
 				              		
-				             		<div class="form-group col-md-12" style="border-bottom: 1px dotted green;">
+				             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 						             	<p class="" style="color: red ;font-weight: bold;"> ** Lifestyle Habits</p>
 						             	
 					             	
@@ -431,7 +431,7 @@
 			              
 			              <div class="row">
 				              		
-				             		<div class="form-group col-md-12" style="border-bottom: 1px dotted green;">
+				             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 						             	<p class="" style="color: #f58320 ;font-weight: bold;"> ** Location Details</p>
 						             	
 					             	
@@ -510,7 +510,7 @@
 	              
 				              <div class="row">
 					              		
-					             		<div class="form-group col-md-12" style="border-bottom: 1px dotted green;">
+					             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 							             	<p class="" style="color: #01840C;font-weight: bold;"> ** Career Details</p>
 							             	
 						             	

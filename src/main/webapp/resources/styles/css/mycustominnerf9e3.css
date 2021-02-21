@@ -101,8 +101,8 @@ menuzord.red .menuzord-menu > li.active > a{
 
 .usr_snd_int{
 	display: inline-block;
-    background-color: #ff9902;
-    border: 1px solid #ff9902!important;
+    background-color:#3f3fff;
+    /*border: 1px solid #ff9902!important;*/
     color: #fff;
     line-height: 15px;
     font-weight: 700;
@@ -117,7 +117,7 @@ menuzord.red .menuzord-menu > li.active > a{
 .usr_snd_mssg{
 	
 	display: inline-block;
-    background-color: #46a746;
+    background-color: green; 
     /*border: 1px solid #ff9902!important;*/
     color: #fff;
     line-height: 15px;
@@ -131,19 +131,27 @@ menuzord.red .menuzord-menu > li.active > a{
 }
 .usr_snd_shr{
 	display: inline-block;
-    color: #ff9902;
+    color: black;
     line-height: 15px;
-    font-weight: 700;
+    font-weight: bolder;
     font-size: 12px;
     padding: 7px;
     border-radius: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid #ff9902;
-    background: #fff;
+    border: 1px solid red;
 	margin:10px;
+	background: #fff;
 }
-
+.usr_snd_shr:hover{
+	color:black;
+}
+.usr_snd_int:hover {
+	color:#fff;
+}
+.usr_snd_mssg:hover {
+	color:#fff;
+}
 .callimgg{
 	width:7%;
 }
@@ -530,7 +538,8 @@ a:hover{
 
 #containr >.post:hover {
   
-  border:2px solid #f58320;
+   /*border:2px solid #f58320;*/
+   border:3px solid #ccc;
 }
 
 .schedule-box {
@@ -543,8 +552,9 @@ a:hover{
 }
 
 .schedule-box:hover {
-  /*background-color: #f0f3fc;*/
-  border:2px solid #f58320;
+  	/*background-color: #f0f3fc;*/
+    /*border:2px solid #f58320;*/
+    border:3px solid #ccc;
 }
 
 .img-responsive {
@@ -578,4 +588,26 @@ a:hover{
 .widget-title {
 	color: black;
     font-family: sans-serif;
+}
+body {
+	color:black;
+}
+.text-gray {
+	color:black!important;
+}
+.prcbox {
+	border:none!important;
+}
+input, select, textarea{
+    color: black!important;
+}
+.fa-star {
+	color:red;
+	font-size: 17px;
+}
+.razorpay-payment-button {
+	color:#fff!important;
+	border-radius:5px;
+	padding:3px;
+	margin:3px;
 }

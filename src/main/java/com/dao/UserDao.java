@@ -620,10 +620,16 @@ public class UserDao {
 				
 				//profile details by username
 				
-		public User getprofiledetails_by_username(String uname){    
-			String sql="select g.name as gonname,rash.name as rashiname, bdg.name as bloodgroupname,u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.email,u.phone_no,mt.name as mother_tongue_name,marst.name as martial_name,u.weight_info,ei.name as employed_in_name,u.express_yourself,ainc.income_value,u.is_mangalik  from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id inner join marital_status marst on marst.id=u.marital_status_id inner join employed_in ei on ei.id=u.employed_in_id inner join annual_income ainc on ainc.id=u.annual_income_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id left join gon_info g on u.gon_info_id=g.id left join rashi_info rash on u.rashi_info_id=rash.id left join blood_group bdg on u.blood_group_id=bdg.id where u.email_verification_status=1 and u.status=1 and u.matrimony_id=?";
-		    
-			return template.queryForObject(sql, new Object[]{uname},new BeanPropertyRowMapper<User>(User.class));    
+		public User getprofiledetails_by_username(String uname){ 
+			try {
+				String sql="select g.name as gonname,rash.name as rashiname, bdg.name as bloodgroupname,u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.email,u.phone_no,mt.name as mother_tongue_name,marst.name as martial_name,u.weight_info,ei.name as employed_in_name,u.express_yourself,ainc.income_value,u.is_mangalik  from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id inner join marital_status marst on marst.id=u.marital_status_id inner join employed_in ei on ei.id=u.employed_in_id inner join annual_income ainc on ainc.id=u.annual_income_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id left join gon_info g on u.gon_info_id=g.id left join rashi_info rash on u.rashi_info_id=rash.id left join blood_group bdg on u.blood_group_id=bdg.id where u.email_verification_status=1 and u.status=1 and u.matrimony_id=?";
+			    
+				return template.queryForObject(sql, new Object[]{uname},new BeanPropertyRowMapper<User>(User.class));   
+			}catch(Exception e)
+			{
+				return null;
+			}
+			 
 		}  
 		
 		//profile details by id

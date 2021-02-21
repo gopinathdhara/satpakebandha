@@ -52,7 +52,7 @@
 			            <div class="sidebar sidebar-left mt-sm-30">
 			            	      
 							<div class="widget">
-				                <h5 class="widget-title line-bottom mailboxbartxt">Search</h5>
+				                <h5 class="widget-title line-bottom mailboxbartxt" style="color:#fff">Search</h5>
 				                <ul class="list list-divider list-border">
 				                  <li><a href="regularsearch" class="mailboxbartxt">Regular Search</a></li>
 				                  <li><a href="regularsearch" class="mailboxbartxt" >Search By ID</a></li>

@@ -26,7 +26,7 @@
       <div class="container">
 		        <div class="row">
 		          <div class="col-md-6 col-md-push-3">
-		            <h4 class="text-gray mt-0 pt-5 mytxtdesgn" > Login <img src="<c:url value="/resources/images/favicon/roase.png" />" height="60px"  alt=""/></h4>
+		            <h4 class="mt-0 pt-5 mytxtdesgn" > Login <img src="<c:url value="/resources/images/favicon/roase.png" />" height="60px"  alt=""/></h4>
 		            <hr>
 		            <p style="color:green;font-weight:bold">Login to continue.</p>
 		            

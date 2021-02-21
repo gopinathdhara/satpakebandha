@@ -87,7 +87,7 @@
           <div class="col-sm-12 col-md-3 advsdbar" >
 	            <div class="sidebar sidebar-left mt-sm-30">
 	            		<p class="advsrhedg">  Basic Details <span id="baschdspn" class="baschdspn">+</span></p>
-			            <div class="basicdetails" id="basicdetails">
+			            <div class="basicdetails comtab" id="basicdetails">
 					          	
 					            <div class="widget" id="baschdwidget">
 					                <h5 class="widget-title line-bottom">Age (in years)</h5>
@@ -263,7 +263,7 @@
 			            </div>
 	            
 	            			<p class="advsrhedg">  Religious Details <span id="religioushdspn" class="baschdspn">-</span></p>
-					       <div class="religiousdetails" id="religiousdetails" style="display:none">
+					       <div class="religiousdetails comtab" id="religiousdetails" style="display:none">
 					          
 					          
 					            <div class="sidebar sidebar-left mt-sm-30">
@@ -340,7 +340,7 @@
 					       
 					       
 					       <p class="advsrhedg">  Professional Details <span id="profhdspn" class="baschdspn">-</span></p>
-					       <div class="careerdetails" style="display:none" id="careerdetails">
+					       <div class="careerdetails comtab" style="display:none" id="careerdetails">
 					          
 					          
 					            <div class="sidebar sidebar-left mt-sm-30">
@@ -537,7 +537,7 @@
 					       </div>
 					       
 					       <p class="advsrhedg">  Location Details <span id="lochdspn" class="baschdspn">-</span></p>
-	            		<div class="locationdetails" id="locationdetails" style="display:none">
+	            		<div class="locationdetails comtab" id="locationdetails" style="display:none">
 					          
 					          
 					            <div class="sidebar sidebar-left mt-sm-30">
@@ -615,7 +615,7 @@
 						%>
 						<form:form  modelAttribute="command">
 						<p class="advsrhedg"> Lifestyle Habits <span id="otherhdspn" class="baschdspn">-</span></p>
-	            		<div class="otherdetails" id="otherdetails" style="">
+	            		<div class="otherdetails comtab" id="otherdetails" style="">
 					          
 					          
 					            <div class="sidebar sidebar-left mt-sm-30">
@@ -1473,7 +1473,7 @@ $(document).ready(function(){
 				      if(count_data==0)
 					  {
 					
-					 	 str='<p style="text-align: center;font-size: 17px;">No Record Found</p>';
+					 	 str='<div class="post clearfix mb-50"><p style="text-align: center;font-size: 17px;">No Record Found</p></div>';
 					 	 $("#recmsg").html("");
 					  }
 				  
@@ -1720,7 +1720,7 @@ $(".advsrapply").click(function(){
 				      if(count_data==0)
 					  {
 					
-					 	 str='<p style="text-align: center;font-size: 17px;">No Record Found</p>';
+					 	 str='<div class="post clearfix mb-50"><p style="text-align: center;font-size: 17px;">No Record Found</p></div>';
 					 	 $("#recmsg").html("");
 					  }
 				  
@@ -1732,7 +1732,8 @@ $(".advsrapply").click(function(){
 	})
 	
 	$("#baschdspn").click(function(){
-		
+		$(".comtab").slideUp(); //close all the tabs
+		$(".baschdspn").html("-");
 		if($("#basicdetails").css("display")=="none")
 			{
 				$("#basicdetails").slideDown();
@@ -1747,7 +1748,8 @@ $(".advsrapply").click(function(){
 	})
 	
 	$("#religioushdspn").click(function(){
-		
+		$(".comtab").slideUp(); //close all the tabs
+		$(".baschdspn").html("-");
 		if($("#religiousdetails").css("display")=="none")
 			{
 				$("#religiousdetails").slideDown();
@@ -1762,7 +1764,8 @@ $(".advsrapply").click(function(){
 	})
 	
 	$("#profhdspn").click(function(){
-		
+		$(".comtab").slideUp(); //close all the tabs
+		$(".baschdspn").html("-");
 		if($("#careerdetails").css("display")=="none")
 			{
 				$("#careerdetails").slideDown();
@@ -1777,7 +1780,8 @@ $(".advsrapply").click(function(){
 	})
 	
 	$("#lochdspn").click(function(){
-		
+		$(".comtab").slideUp(); //close all the tabs
+		$(".baschdspn").html("-");
 		if($("#locationdetails").css("display")=="none")
 			{
 				$("#locationdetails").slideDown();
@@ -1792,7 +1796,8 @@ $(".advsrapply").click(function(){
 	})
 	
 	$("#otherhdspn").click(function(){
-		
+		$(".comtab").slideUp(); //close all the tabs
+		$(".baschdspn").html("-");
 		if($("#otherdetails").css("display")=="none")
 			{
 				$("#otherdetails").slideDown();

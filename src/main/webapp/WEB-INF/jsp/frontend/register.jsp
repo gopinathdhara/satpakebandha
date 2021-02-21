@@ -27,11 +27,11 @@
         <div class="row">
           
           <div class="col-md-4">
-          		<h4 class="text-gray pt-10 mt-0 mb-30 mytxtdesgn" >Why Register</h4>
-          		<p class="text-gray pt-10 mt-0 mb-30" ><i class="fa fa-user" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i>  Lakhs of Genuine Profiles</p>
-          		<p class="text-gray pt-10 mt-0 mb-30" ><i class="fa fa-adjust" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i>  Many Verified by Personal Visit</p>
-          		<p class="text-gray pt-10 mt-0 mb-30" ><i class="fa fa-check-circle" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i> Secure and Family Friendly</p>
-          		<p class="text-gray pt-10 mt-0 mb-30" ><i class="fa fa-database" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i> Strict Privacy Control</p>
+          		<h4 class="pt-10 mt-0 mb-30 mytxtdesgn" >Why Register</h4>
+          		<p class="pt-10 mt-0 mb-30" ><i class="fa fa-user" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i>  Lakhs of Genuine Profiles</p>
+          		<p class="pt-10 mt-0 mb-30" ><i class="fa fa-adjust" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i>  Many Verified by Personal Visit</p>
+          		<p class="pt-10 mt-0 mb-30" ><i class="fa fa-check-circle" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i> Secure and Family Friendly</p>
+          		<p class="pt-10 mt-0 mb-30" ><i class="fa fa-database" aria-hidden="true" style="font-size: 30px;color: #f58320;"></i> Strict Privacy Control</p>
           </div>
           
           
@@ -42,7 +42,7 @@
 		              <div class="icon-box mb-0 p-0">
 		               
 		                
-		                <h4 class="text-gray pt-10 mt-0 mb-30 mytxtdesgn">Don't have an Account? Register Now. <img src="<c:url value="/resources/images/favicon/roase.png" />" height="60px"  alt=""/></h4>
+		                <h4 class="pt-10 mt-0 mb-30 mytxtdesgn">Don't have an Account? Register Now. <img src="<c:url value="/resources/images/favicon/roase.png" />" height="60px"  alt=""/></h4>
 		                <%
 		                String errormsg=request.getParameter("errormsg");
 		                if(errormsg!=null)

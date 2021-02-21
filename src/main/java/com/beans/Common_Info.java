@@ -15,6 +15,6 @@ public class Common_Info {
 	
 	public static String apikey="rzp_live_cJixt1qaY8lKn9";
 	public static String secretkey="K1ymGpj8pmr9ehRb2HF0Ujkc";
-	public static int perpage=10;
+	public static int perpage=5;
 	public static int adminperpage=10;
 }

@@ -25,6 +25,7 @@
     <section>
       <div class="container">
         <div class="section-content">
+       <c:if test="${not empty uobj}">
           <div class="row">
           
           
@@ -188,6 +189,16 @@
             </div>
             
           </div>
+          </c:if>
+		<c:if test="${empty uobj}">
+			<div class="row">
+          
+          		<div class="schedule-box col-sx-12 col-sm-10 col-md-10 sidebar pull-left">
+          			<p style="text-align:center">No Record Found. Please Search With Valid User Profile ID.</p>
+          		</div>
+          		
+          	</div>
+		</c:if>
         </div>
       </div>
     </section>

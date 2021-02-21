@@ -60,7 +60,7 @@ padding:6px !important;
 	                <div class="row">
 	              		<div class="form-group col-md-12">
 		             	
-		              			<p class="text-gray">Welcome! Let's start your partner search.</p>
+		              			<p class="">Welcome! Let's start your partner search.</p>
 		              			
 		             			<%
 		             			
@@ -86,7 +86,7 @@ padding:6px !important;
               
 			              		<div class="row">
 				              		
-				             		<div class="form-group col-md-12"  style="border-bottom: 1px dotted green;">
+				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	
 					             		<p style="color:#D30665;font-weight: bold;">** Profile Details</p>
 				             		</div>
@@ -351,7 +351,7 @@ padding:6px !important;
 					                
 					                
 			              </div>
-			            <div class="form-group col-md-12"  style="border-bottom: 1px dotted green;">
+			            <div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	
 						             	<p style="color:#1601CF;font-weight: bold;">** Location Details</p>
 					             	
@@ -472,7 +472,7 @@ padding:6px !important;
 		   		<div id="step3" >  
 	              
 				              
-					           		<div class="form-group col-md-12"  style="border-bottom: 1px dotted green;">
+					           		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	
 						             	<p style="color:#01840C;font-weight: bold;">** Career Details</p>
 					             	

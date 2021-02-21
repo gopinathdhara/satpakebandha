@@ -61,7 +61,7 @@
 			            <div class="sidebar sidebar-left mt-sm-30">
 			            	      
 							<div class="widget">
-				                <h5 class="widget-title line-bottom mailboxbartxt">Inbox</h5>
+				                <h5 class="widget-title line-bottom mailboxbartxt" style="color:#fff">Inbox</h5>
 				                <ul class="list list-divider list-border">
 				                  <li><a href="mailbox?type=pending" class="mailboxbartxt <% if(type.equals("pending")){ %> mailbxsel <% } %>"  >Pending</a></li>
 				                  <li><a href="mailbox?type=accepted" class="mailboxbartxt <% if(type.equals("accepted")){ %> mailbxselmob <% } %>"> Accepted</a></li>
@@ -584,7 +584,7 @@ $(document).ready(function(){
 				  if(count_data==0)
 				  {
 				
-				 	 str='<p style="text-align: center;font-size: 17px;">No Record Found</p>';
+				 	 str='<div class="post clearfix mb-50"><p style="text-align: center;font-size: 17px;">No Record Found</p></div>';
 				 	 
 				  }
 				  

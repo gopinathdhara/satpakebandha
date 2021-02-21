@@ -30,7 +30,7 @@
       
       <!-- <div id="side-panel-trigger" class="side-panel-trigger" style="display:none"><a href="#"><i class="fa fa-filter" aria-hidden="true" class="advfiltermnu" style="color: #ff9902;font-size: 45px;"></i></a></div> -->
       
-      <p style="font-size: 20px;color: #212529;letter-spacing: 1.5px;text-align: center;"> Payment For Membership </p>
+      <p style="font-size: 20px;color: #212529;letter-spacing: 1.5px;text-align: center;text-decoration: underline;"> Payment For Membership </p>
       
       <div class="row">
       

@@ -119,7 +119,7 @@ padding:6px !important;
               
 			              		<div class="row">
 				              		
-				             		<div class="form-group col-md-12"  style="border-bottom: 1px dotted green;">
+				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: #D30665;font-weight: bold;"> ** Basic & Religion Preferences</p>
 						             	
 					             	
@@ -163,7 +163,7 @@ padding:6px !important;
 														 	<% if(countstatus==0){ %>
 														 	
 														 	<% for(int j=18; j<=70; j++) { %>
-														 	<option value="<%= j %>" <%if(j==30){ %>selected="selected"<% }%> ><%= j %></option>
+														 	<option value="<%= j %>" <%if(j==40){ %>selected="selected"<% }%> ><%= j %></option>
 														 	
 														 	<% } %>
 														 	 <% } else { %>
@@ -387,7 +387,7 @@ padding:6px !important;
 			              </div>
 			              <div class="row">
 				              		
-				             		<div class="form-group col-md-12"  style="border-bottom: 1px dotted green;">
+				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: rgb(245, 131, 32) !important;font-weight: bold;"> ** Lifestyle Habits</p>
 						             	
 				             		</div>
@@ -477,7 +477,7 @@ padding:6px !important;
 			               
 			            <div class="row">
 				              		
-				             		<div class="form-group col-md-12"  style="border-bottom: 1px dotted green;">
+				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: #01840C;font-weight: bold;"> ** Location Preferences</p>
 						             	
 					             	
@@ -601,7 +601,7 @@ padding:6px !important;
 		   		<div id="step3" >  
 	              
 				              
-					           		<div class="form-group col-md-12"  style="border-bottom: 1px dotted green;">
+					           		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: #1601CF;font-weight: bold;">  ** Professional Preferences</p>
 						             	
 					             	

@@ -37,7 +37,7 @@
                Offer is valid for limited time.  </p>
                
                <div class="col-sm-4 col-md-4 col-lg-4">
-	                	<div class="schedule-box maxwidth500 bg-light mb-30">
+	                	<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
                 
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Golden Premium</h5>
@@ -50,7 +50,7 @@
 				</div>
 				
 				 <div class="col-sm-4 col-md-4 col-lg-4">
-	                	<div class="schedule-box maxwidth500 bg-light mb-30">
+	                	<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
                 
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Classic Premium</h5>
@@ -63,7 +63,7 @@
 				</div>
 				
 				<div class="col-sm-4 col-md-4 col-lg-4">
-	                	<div class="schedule-box maxwidth500 bg-light mb-30">
+	                	<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
                 
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Regular Premium</h5>
@@ -82,7 +82,7 @@
                
                <div class="col-sm-6 col-md-6 col-lg-6">
                
-        				<div class="schedule-box maxwidth500 bg-light mb-30">
+        				<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
                 
 				                <div class="schedule-details clearfix p-15 pt-10">
 				                  <h5 class="font-16 title"><a href="#" style="color:red;">Free</a></h5>
@@ -103,7 +103,7 @@
 				
 				
 				<div class="col-sm-6 col-md-6 col-lg-6">
-			        	<div class="schedule-box maxwidth500 bg-light mb-30">
+			        	<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
 			                
 					                <div class="schedule-details clearfix p-15 pt-10">
 					                  <h5 class="font-16 title"><a href="#" style="color:red;">Paid</a></h5>
@@ -130,7 +130,7 @@
                </div>
                
                <div class="col-sm-4 col-md-4 col-lg-4">
-	                	<div class="schedule-box maxwidth500 bg-light mb-30">
+	                	<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
                 
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Renew</h5>
@@ -141,7 +141,7 @@
 						</div>
 				</div>
 				<div class="col-sm-4 col-md-4 col-lg-4">
-	                	<div class="schedule-box maxwidth500 bg-light mb-30">
+	                	<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
                 
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Renew</h5>
@@ -152,7 +152,7 @@
 						</div>
 				</div>
 				<div class="col-sm-4 col-md-4 col-lg-4">
-	                	<div class="schedule-box maxwidth500 bg-light mb-30">
+	                	<div class="schedule-box prcbox maxwidth500 bg-light mb-30">
                 
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Renew</h5>
