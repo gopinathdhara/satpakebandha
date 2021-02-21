@@ -316,3 +316,27 @@ body {
 .text-gray {
 	color:black!important;
 }
+.discnth1 {
+	float:right; 
+	margin-left:100px; 
+	text-transform:capitalize; 
+	text-decoration:blink; 
+	text-align:justify;
+	color:#fff;
+}
+@media only screen and (max-width: 768px) {
+	.discnth1{
+		color:black;
+		font-weight:bold;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	  .mc-image {
+	  	width: 100%!important;
+	  }
+	  .fotdv {
+	  	margin:0 auto!important;
+	  
+	  }
+}

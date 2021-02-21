@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.beans.Common_Info" %> 
-  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=6.1" />" >
+  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=6.4" />" >
 <% 
 int userid=0;
 try
@@ -197,7 +197,7 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
         
         <!-- Modal body -->
         <div class="modal-body"  style=" background:#FF9900;background-image:url(<c:url value="/resources/images/membership/responsivepopup.png" />); background-repeat:no-repeat; background-position:left;height:180px;">
-          <h4 style="float:right; margin-left:100px; text-transform:capitalize; text-decoration:blink; text-align:justify;color:#fff">85% Discount<br>
+          <h4 style="" class="discnth1">85% Discount<br>
 Festive Offer Up To<br> 31/03/2021</h4>
         </div>
         

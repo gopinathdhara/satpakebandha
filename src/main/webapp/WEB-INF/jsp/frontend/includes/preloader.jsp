@@ -4,5 +4,5 @@
     <div id="spinner">
       <img src="<c:url value="/resources/images/preloaders/1.gif" />" alt="">
     </div>
-    <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+    <!-- <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div> -->
   </div>

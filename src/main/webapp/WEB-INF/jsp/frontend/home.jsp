@@ -28,11 +28,11 @@
     <!-- Section: home -->
     <section id="home" class="divider parallax layer-overlay overlay-dark-3" data-stellar-background-ratio="0.5">
       <div class="maximage-slider">
-        <div id="maximage" >
+        <div id="maximage"> 
          
-          <img src="<c:url value="/resources/images/banner.jpg" />" alt=""/>
+          <img src="<c:url value="/resources/images/banner.jpg" />" alt="Happy Marriages!"/>
        
-        </div>
+        </div>  
       
       </div>
       <div class="display-table">

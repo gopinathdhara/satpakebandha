@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <footer id="footer" class="footer pb-0 bg-deep">
     
-    <div class="row text-center">
+    <div class="row text-center fotdv">
         <div class="col-md-6">
           <p class="font-6 m-0"  class="fshmhd">About Us</p>
           <p class="fshmpar">The No. 1 Matrimony Site for Bengalis - 7pakebandha, 
@@ -24,7 +24,7 @@
         </div>
       </div>
     
-      <div class="row text-center">
+      <div class="row text-center fotdv">
         <div class="col-md-12">
           <p class="font-12 m-0">Copyright &copy;2020 7pakebandha. All Rights Reserved</p>
         </div>

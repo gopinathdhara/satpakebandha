@@ -611,3 +611,6 @@ input, select, textarea{
 	padding:3px;
 	margin:3px;
 }
+.mc-image {
+	width:100%!important;
+}
