@@ -34,7 +34,7 @@ public class PaymentDao {
 	//membership package details
 	public List<Membership_Package> get_membership_package_list()
 	{
-		return template.query("select id,title,duration,duration_type,discount_percentage,original_price,paid_amount,status,type from membership_package where status=1 and type=0 order by id desc", new ResultSetExtractor<List<Membership_Package>>() {
+		return template.query("select id,title,duration,duration_type,discount_percentage,original_price,paid_amount,status,type from membership_package where status=1 order by type asc", new ResultSetExtractor<List<Membership_Package>>() {
 			public List<Membership_Package> extractData(ResultSet rs) throws SQLException, DataAccessException {
 				// TODO Auto-generated method stub
 			
@@ -164,7 +164,7 @@ public Boolean saveorderinfo(final Payment_Details e){
 		public List<Payment_Details> my_all_transaction(long userid,long pageid,long total)
 	 	{
 	 		
-	 		 String sql="select id,from_date,to_date,total_amount,transaction_id,payment_type,package_title,package_duration,package_duration_type,package_discount_percentage,created_date,status from payment_details where userinfo_id='"+userid+"'  order by id desc limit "+(pageid-1)+","+total;
+	 		 String sql="select id,from_date,to_date,total_amount,transaction_id,payment_type,package_title,package_duration,package_duration_type,package_discount_percentage,created_date,status from payment_details where status=1 and userinfo_id='"+userid+"'  order by id desc limit "+(pageid-1)+","+total;
 	 		
 	 		return template.query(sql, new ResultSetExtractor<List<Payment_Details>>() {
 	 			
@@ -291,4 +291,42 @@ public Boolean saveorderinfo(final Payment_Details e){
 				 return template.queryForObject(sql, new Object[]{receiver_id},new BeanPropertyRowMapper<User>(User.class));    
 			
 	     }
+	     
+	     //check if member needs to renew
+	     
+	   //check if member needs to renew
+	 public int check_if_member_needs_renew(long userid)
+     {    
+    	 
+			//String sql="select count(*) as totalrecord from payment_details where CURDATE()>=from_date and CURDATE()<=to_date and status=1 and  userinfo_id=?";
+    	 
+    	    String sql="select count(*) as totalrecord from payment_details where status=1 and userinfo_id=?";
+		    //System.out.print(sql);
+		    //System.out.print(userid);
+			User uobj= template.queryForObject(sql, new Object[]{userid},new BeanPropertyRowMapper<User>(User.class));
+			if(uobj.getTotalrecord()>0)
+			{
+				// paid member
+				 //System.out.print("hi renew");
+				//now check if member really needs to renew 
+				String sql1="select count(*) as totalrecord from payment_details where CURDATE() BETWEEN from_date and to_date and status=1 and userinfo_id=?";
+			    
+			User uobj1= template.queryForObject(sql1, new Object[]{userid},new BeanPropertyRowMapper<User>(User.class));
+			
+					if(uobj1.getTotalrecord()==0)
+					{
+						return 1; // member needs renewal
+						
+					}else {
+						
+						return 2; // renewal is not needed
+					}
+				
+			}
+			else
+			{
+				return 0; //member has not paid
+			}
+			
+		} 
 }

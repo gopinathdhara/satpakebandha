@@ -26,6 +26,7 @@ import com.beans.Profile;
 import com.beans.Regular_Search;
 import com.beans.State;
 import com.beans.User;
+import com.dao.PaymentDao;
 import com.dao.SearchDao;
 import com.dao.UserDao;
 import com.google.gson.Gson;
@@ -36,8 +37,10 @@ public class UserController {
     UserDao dao;//will inject dao from XML file 
 	@Autowired
 	SearchDao SrchDao;
+	@Autowired    
+    PaymentDao pdao;//will inject dao from XML file 
 	@RequestMapping("/allusers")    
-    public String allusers(Model m,HttpSession session){  
+    public String allusers(Model m,HttpSession session,HttpServletRequest request){  
 		
 		//###########check login###############
 		long userid=(long) 0;
@@ -52,7 +55,8 @@ public class UserController {
 			 
 		}
 		//###########check login###############
-		
+		 int renewal_status= pdao.check_if_member_needs_renew(userid);
+		 request.setAttribute("renewal_status", renewal_status);
         return "frontend/allusers";   
     } 
 	

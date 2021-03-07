@@ -259,6 +259,8 @@ public class PaymentController {
 			}
 		//###########check login###############
 		 List packagedetails= pdao.get_membership_package_list();
+		 int renewal_status= pdao.check_if_member_needs_renew(userid);
+		 request.setAttribute("renewal_status", renewal_status);
 		 m.addAttribute("packagedetails",packagedetails);
 		 return "frontend/packagedetails";
 		

@@ -24,7 +24,20 @@
     <!-- Section: Bridesmaid -->
     <section>
       
-       
+       		<% 
+				
+				int renewal_status=0;
+				try
+				{
+					renewal_status=Integer.parseInt(request.getAttribute("renewal_status").toString());
+				}
+				catch(Exception e)
+				{
+					renewal_status=0;
+				}
+			%>
+			
+         <c:set var="renewal_status" value="<%=renewal_status%>" />
          
       <div class="container ">
       
@@ -46,6 +59,9 @@
            
            
             <c:forEach items="${packagedetails}" var="packagedetails">
+            
+            <c:if test = "${packagedetails.getType()==0}">
+            	<c:if test = "${renewal_status!=1}">
             	<div class="col-sm-4 col-md-4 col-lg-4">
 	                	<div class="schedule-box maxwidth500 bg-light mb-30">
                 
@@ -60,6 +76,31 @@
 				                </div>
 						</div>
 				</div>
+				</c:if>
+			</c:if>
+			
+			<c:if test = "${packagedetails.getType()==1}">
+			
+            	<c:if test = "${renewal_status==1}">
+	            	<div class="col-sm-4 col-md-4 col-lg-4">
+		                	<div class="schedule-box maxwidth500 bg-light mb-30">
+	                
+					                <div class="schedule-details clearfix p-15 pt-10 memshp">
+					                  <h5 class="font-16 title memshiptxthd"><c:out value="${packagedetails.getTitle()}"/></h5>
+					                  <p class="memshiptxt">Duration: ${packagedetails.getDuration()} ${packagedetails.getDuration_type()}</p>
+					                  <p class="memshiptxt">Discount: ${packagedetails.getDiscount_percentage()}% </p>
+					                   <p class="memshiptxtorg"> Rs. ${packagedetails.getOriginal_price()} </p>
+					                  <p class="memshiptxt">Amount to be paid: Rs. ${packagedetails.getPaid_amount()} </p>
+					                  <a href="payment?packageid=${packagedetails.getId()}" class="btn btn-warning makepaybtn">Online Payment</a>
+					                   <a href="cashondelivery?packageid=${packagedetails.getId()}" class="btn btn-warning makepaybtn">Cash On Delivery</a>
+					                </div>
+							</div>
+					</div>
+				</c:if>
+				
+			</c:if>
+			
+				
 				</c:forEach>
               	
             </div>

@@ -183,39 +183,13 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
     </div>
   </header>
   
-  <!-- Trigger/Open The Modal -->
-<button id="myBtn" style="display:none" >Open popup</button>
-<div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body"  style=" background:#FF9900;background-image:url(<c:url value="/resources/images/membership/responsivepopup.png" />); background-repeat:no-repeat; background-position:left;height:180px;">
-          <h4 style="" class="discnth1">85% Discount<br>
-Festive Offer Up To<br> 31/03/2021</h4>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" id="closemodal">Close</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
 
 <script>
 $(document).ready(function(){
 	
 	/*########Discount modal popup################*/
 	
-	
+	/*
 		// Get the modal
 	var modal = document.getElementById("myModal");
 	
@@ -253,6 +227,7 @@ $(document).ready(function(){
 	$('#closemodal').click(function() {
 	    $('.close').trigger('click');
 	});
+	*/
 	/*########Discount modal popup################*/
 	
 	/* mail box notification */

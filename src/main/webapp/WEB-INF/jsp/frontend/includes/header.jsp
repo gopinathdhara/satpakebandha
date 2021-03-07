@@ -187,20 +187,23 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
       <div class="modal-content">
       
         <!-- Modal Header -->
-        <div class="modal-header">
+        <div class="modal-header ofrmodhd">
           
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close ofrmodhdcls" data-dismiss="modal"><!--&times;  -->&nbsp;&nbsp;&nbsp;</button>
         </div>
         
         <!-- Modal body -->
-        <div class="modal-body"  style=" background:#FF9900;background-image:url(<c:url value="/resources/images/membership/responsivepopup.png" />); background-repeat:no-repeat; background-position:left;height:180px;">
+        <div class="modal-body ofrmodbd"  style="background-image:url(<c:url value="/resources/images/membership/responsivepopup.png" />);">
           <h4 style="" class="discnth1">85% Discount<br>
-Festive Offer Up To<br> 31/03/2021</h4>
+				Festive Offer Up To<br> 31/03/2021 <img src="<c:url value="/resources/images/membership/redrose.jpg" />" style="width:28%;"/></h4>
+				
+		 	
+				
         </div>
         
         <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" id="closemodal">Close</button>
+        <div class="modal-footer ofrmodft">
+          <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" id="closemodal">Close</button>
         </div>
         
       </div>
@@ -256,18 +259,16 @@ $(document).ready(function(){
 });
 
 </script>
+<!-- 
 <audio id="soundTour"  autoplay loop>
 	<source src="<c:url value="/resources/ringtone/matrimony.mp3" />" >
-</audio>
+</audio> -->
 <script>
 /* indian matrimony ringtone play*/
+	/*
 	var playing = false;
 	var audioElm = $('#soundTour').get(0);
-	/*
-	$(window).scroll(function() {
-	    audioElm.play();
-	  
-	});*/
+	
 	$('#closemodal').click(function() {
 		audioElm.play();
 	});
@@ -280,6 +281,6 @@ $(document).ready(function(){
         	audioElm.pause();
             //alert("Audio Stop Successfully");
         },
-        30000);
-}, false); 
+        5000);
+}, false); */
 </script>

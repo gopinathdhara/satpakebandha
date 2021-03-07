@@ -21,7 +21,21 @@
   <!-- Start main-content -->
   <div class="main-content mgtop1" >
     <!-- Section: inner-header -->
-
+	<% 
+				
+				int renewal_status=0;
+				try
+				{
+					renewal_status=Integer.parseInt(request.getAttribute("renewal_status").toString());
+				}
+				catch(Exception e)
+				{
+					renewal_status=0;
+				}
+	%>
+	
+	<input type="hidden" value="<%=renewal_status %>" id="renewal_status"/>
+	
     <!-- Section: Bridesmaid -->
     <section>
       
@@ -427,43 +441,7 @@
 <script>
 $(document).ready(function(){
 	
-	/*########Discount modal popup################*/
 	
-	/*
-	
-		// Get the modal
-	var modal = document.getElementById("myModal");
-	
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
-	
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-	
-	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-	  modal.style.display = "block";
-	}
-	
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	  modal.style.display = "none";
-	}
-	
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	  if (event.target == modal) {
-	    modal.style.display = "none";
-	  }
-	}
-	
-	if(sessionStorage.getItem('popState') != 'shown'){
-		$("#myBtn").trigger("click")
-        sessionStorage.setItem('popState','shown')
-    }
-	*/
-	
-	/*########Discount modal popup################*/
 	
 	var mobscrollflag=0;
 	var deskscrollflag=0;		
@@ -1366,7 +1344,91 @@ $(document).on("click",".chckmemprm",function(){
 	});
 })
 </script>
+<% if(renewal_status==1) {%>
+<button id="myBtnRenew" style="display:none" >Open popup</button>
+<div class="modal" id="myModalRenew">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header ofrmodhd1">
+          
+          <button type="button" class="close ofrmodhdcls" data-dismiss="modal"><!--&times;  -->&nbsp;&nbsp;&nbsp;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body ofrmodbd1"  style="background-image:url(<c:url value="/resources/images/renew/renew.png" />);">
+          <h4 style="" class="discnth2">Your Membership Expired<br>
+			 Special Offer 85% Discount! <br/>
+				<a href="packagedetails" class="btn btn-success btn-sm"> Renew Now</a><img src="<c:url value="/resources/images/membership/redrose.jpg" />" style="width:28%;"/>
+				
+				</h4> 
+      		
+      		
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer ofrmodft1">
+          <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" id="renewCloseModal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<%} %>
+<script>
+$(document).ready(function(){
+	//Renewal popup
+	/*########Discount modal popup################*/
+	
+	var renewal_status=$("#renewal_status").val();
+	
+	if(renewal_status==1)
+		{
+				var modal = document.getElementById("myModalRenew");
+				
+				// Get the button that opens the modal
+				var btn = document.getElementById("myBtnRenew");
+				
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+				
+				// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+				  modal.style.display = "block";
+				}
+				
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+				  modal.style.display = "none";
+				}
+				
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				  if (event.target == modal) {
+				    modal.style.display = "none";
+				  }
+				}
+				
+				if(sessionStorage.getItem('popRenewState') != 'shown'){
+					
+					setTimeout(function(){ $("#myBtnRenew").trigger("click") }, 3000);
+					
+					
+			        sessionStorage.setItem('popRenewState','shown')
+			    }
+				
+				
+				/*########Discount modal popup################*/
+				
+				$('#renewCloseModal').click(function() {
+				    $('.close').trigger('click');
+				});
+		}
+		// Get the modal
+	
+});
 
-
+</script>
 </body>
 </html>

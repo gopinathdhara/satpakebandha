@@ -464,8 +464,75 @@
         </div>
       </div>
     </section>
+	
+   <section>
+		   <div class="container homabt">
+				  <h4>About Us</h4>
+				  <div class="row">
+				    
+				    <div class="col-sm-12">
+							<p class="homabtp">
+							 <span class="wlcmhom"> Welcome to 7pakebandha.in</span><br/>
 
-   
+									The No. 1 Matrimony Site for Bengalis - 7pakebandha.in, 
+									is one of the leading and most trusted matrimony websites in India.
+									
+									It is a free Indian matrimony with the mission of providing 
+									high quality matrimonial services in affordable prices to marriage seekers.
+									
+									7pakebandha.in has helped lakhs of 
+									Bengali singles to find suitable Bengali brides and grooms and get married.
+									
+									It has earned the goodwill of millions of Bengalis worldwide and
+									has become the most trusted choice when it comes to finding a life partner. 
+									<span id="abt_dots">...</span>
+									<span id="abt_more">
+									<br/><br/>You can easily find lakhs of quality profiles from across cities in West Bengal 
+									including Kolkata, Howrah, Bakura, Medinipur, Bardhaman and Hooghly 
+									besides Bengalis from other 
+									leading states in India.
+									
+									More than 1 lakhs Kolkata-based matrimonial profiles have found their soul mates 
+									on the most trusted matchmaking site 7pakebandha.in.
+									
+									It believes in providing the most secure and 
+									convenient matchmaking experience to all its members.<br/><br/>
+									
+									We are commited to provide you
+									good services at minimum cost and good quality.
+									
+									Our dream is to build a better 
+									India through happy marriages. 
+									
+									We wish to give you better services through any circumstances
+									and obstacles. 
+									
+									We need your hearty cooperation and congratulation to fulfill our dream. 
+									
+									<br/><br/>
+									7pakebandha.in acts as a platform to enable any user to themselves register on it 
+									(by filling the mandatory fields and optional fields, if any) to voluntarily search
+									for profile(s) from the database of already registered users. 
+									you must have a valid/operational mobile phone number and an email id. 
+									7pakebandha Members are provided with free/paid access for searching profiles
+									from the database of 7pakebandha, as per the partner preference set by you on 
+									the Web site and you can shortlist the profiles in which you are interested. 
+									You can also send interest to other members. if you take membership then you 
+									can chat or call other members. 
+									<br/><br/>
+									
+									You can also be a part of all those love stories that blossomed on this matchmaking site.
+									
+									Ready for marriage? Get started now! All it takes is a few simple clicks to register 
+									and start the search for your life partner. Register today as early as possible!
+									
+									</span>
+							</p>
+							<button onclick="readAboutUs()" id="myBtnRead" class="btn btn-danger btn-sm">Read More</button>
+				    </div>
+				  </div>
+			</div>
+    </section>
     
     <!-- Section: Event  -->
     <section id="event" class="bg-lighter">
@@ -551,3 +618,20 @@
 
 <!-- Mirrored from 7pakebandha.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Jul 2020 13:33:59 GMT -->
 </html>
+<script>
+function readAboutUs() {
+  var dots = document.getElementById("abt_dots");
+  var moreText = document.getElementById("abt_more");
+  var btnText = document.getElementById("myBtnRead");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read More"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read Less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>

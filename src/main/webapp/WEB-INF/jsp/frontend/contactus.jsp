@@ -48,7 +48,7 @@
                
                <div id="mapcontent">
                
-               		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20840.961384684793!2d88.24552909794161!3d22.571761078399806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0278dd05528a29%3A0x7b30e789812b12a3!2s7pake%20Bandha!5e0!3m2!1sen!2sin!4v1608361612018!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+               		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5210.065821717452!2d88.25739094042189!3d22.576377635247706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02798f0b544a25%3A0xab5102a7a2f3b6f4!2sMIRA%20APARTMENT!5e0!3m2!1sen!2sin!4v1614520122750!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                
                </div>
               
