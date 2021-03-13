@@ -1360,7 +1360,7 @@ $(document).on("click",".chckmemprm",function(){
         <div class="modal-body ofrmodbd1"  style="background-image:url(<c:url value="/resources/images/renew/renew.png" />);">
           <h4 style="" class="discnth2">Your Membership Expired<br>
 			 Special Offer 85% Discount! <br/>
-				<a href="packagedetails" class="btn btn-success btn-sm"> Renew Now</a><img src="<c:url value="/resources/images/membership/redrose.jpg" />" style="width:28%;"/>
+				<a href="packagedetails" class="btn btn-success btn-sm"> Renew Now</a><img src="<c:url value="/resources/images/membership/redrose.jpg" />" class="rdrs"/>
 				
 				</h4> 
       		
