@@ -428,7 +428,7 @@ $(document).ready(function(){
 				  
 				  if (jQuery.isEmptyObject(response))						
 				   {
-					  $("#containr").html("No record found");												
+					  $("#containr").html('<div class="post clearfix mb-50"><p style="text-align: center;font-size: 17px;">No Record Found</p></div>');												
 				   }
 			  }
 		});	  

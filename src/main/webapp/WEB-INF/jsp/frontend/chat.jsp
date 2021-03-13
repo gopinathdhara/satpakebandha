@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/chat/jquery.mCustomScrollbar.min.css"/>">
 <script type="text/javascript" src="<c:url value="/resources/chat/jquery.mCustomScrollbar.min.js"/>"></script>
 
-<link rel="stylesheet" href="<c:url value="/resources/chat/chat.css?v=1.2" />" >  
+<link rel="stylesheet" href="<c:url value="/resources/chat/chat.css?v=1.3" />" >  
 <script type="text/javascript" src="<c:url value="/resources/chat/chat.js" />"></script>
 
 

@@ -203,7 +203,7 @@ public Boolean saveorderinfo(final Payment_Details e){
 	     // total record
 	     public Payment_Details my_all_transaction_total_record(long userid){    
 	    	 
-				String sql="select count(*) as totalrecord from payment_details where userinfo_id=?";
+				String sql="select count(*) as totalrecord from payment_details where userinfo_id=? and status=1";
 			    
 				return template.queryForObject(sql, new Object[]{userid},new BeanPropertyRowMapper<Payment_Details>(Payment_Details.class));    
 			} 

@@ -135,7 +135,8 @@
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Renew</h5>
 				                  <p class="memshiptxt">Duration: 3 month</p>
-				              
+				              	  <p class="memshiptxt">Discount: 85% </p>
+				                   <p class="memshiptxtorg"> Rs. 2000 </p>
 				                  <p class="memshiptxt">Amount to be paid: Rs. 300 </p>
 				                </div>
 						</div>
@@ -146,7 +147,8 @@
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Renew</h5>
 				                  <p class="memshiptxt">Duration: 6 month</p>
-				              
+				                  <p class="memshiptxt">Discount: 85% </p>
+				                   <p class="memshiptxtorg"> Rs. 3333 </p>
 				                  <p class="memshiptxt">Amount to be paid: Rs. 500 </p>
 				                </div>
 						</div>
@@ -157,7 +159,8 @@
 				                <div class="schedule-details clearfix p-15 pt-10 memshp">
 				                  <h5 class="font-16 title memshiptxthd">Renew</h5>
 				                  <p class="memshiptxt">Duration: 1 year</p>
-				              
+				              		<p class="memshiptxt">Discount: 85% </p>
+				                   <p class="memshiptxtorg"> Rs. 6666 </p>
 				                  <p class="memshiptxt">Amount to be paid: Rs. 1000 </p>
 				                </div>
 						</div>

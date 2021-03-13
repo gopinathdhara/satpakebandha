@@ -57,6 +57,11 @@
       
            <div class="col-sm-12 col-md-12 blog-pull-right prfboxshd" style="padding:20px">
            
+            	<c:if test = "${renewal_status==1}">
+           				<h3>Renew</h3>
+           				<p>You can renew your membership at very minimum cost. Please look into the below sections.</p>
+           		</c:if>
+			
            
             <c:forEach items="${packagedetails}" var="packagedetails">
             
@@ -82,7 +87,9 @@
 			<c:if test = "${packagedetails.getType()==1}">
 			
             	<c:if test = "${renewal_status==1}">
+            	
 	            	<div class="col-sm-4 col-md-4 col-lg-4">
+	            	
 		                	<div class="schedule-box maxwidth500 bg-light mb-30">
 	                
 					                <div class="schedule-details clearfix p-15 pt-10 memshp">

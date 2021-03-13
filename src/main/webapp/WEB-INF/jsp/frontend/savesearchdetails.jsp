@@ -43,7 +43,7 @@
               <div class="row" id="containr">
               
 				<c:if test="${empty sList}">
-					<p>No Record Found.</p>
+					<div class="post clearfix mb-50"><p style="text-align: center;font-size: 17px;">No Record Found.</p></div>
 				</c:if>
               <c:forEach items="${sList}" var="sList1">
               

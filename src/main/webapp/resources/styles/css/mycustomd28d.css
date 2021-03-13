@@ -368,7 +368,7 @@ body {
     font-size: 16px;
 }
 .ofrmodhd {
-	background: #ea4544;
+	background: #f58320;
 }
 .ofrmodhdcls {
     font-family: sans-serif;
@@ -376,7 +376,7 @@ body {
     font-weight: 800;
 }
 .ofrmodft{
-	background: #ea4544;
+	background: #f58320;
 }
 .ofrmodbd {
 	background:#fff;
@@ -385,11 +385,11 @@ body {
 	height:180px;
 }
 .ofrmodhd1 {
-	background: #ea4544;
+	background: #f58320;
 }
 
 .ofrmodft1{
-	background: #ea4544;
+	background: #f58320;
 }
 .ofrmodbd1 {
 	background:#fff;
@@ -404,7 +404,7 @@ body {
     text-align: justify;
     font-family: sans-serif;
     font-size: 17px;
-    color: #cc0a0a;
+    color: #384188;
     font-style: italic;
     font-weight: normal;
     text-shadow: 1px 1px #07bbf1;
