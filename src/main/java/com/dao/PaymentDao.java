@@ -164,7 +164,7 @@ public Boolean saveorderinfo(final Payment_Details e){
 		public List<Payment_Details> my_all_transaction(long userid,long pageid,long total)
 	 	{
 	 		
-	 		 String sql="select id,from_date,to_date,total_amount,transaction_id,payment_type,package_title,package_duration,package_duration_type,package_discount_percentage,created_date,status from payment_details where status=1 and userinfo_id='"+userid+"'  order by id desc limit "+(pageid-1)+","+total;
+	 		 String sql="select id,from_date,to_date,total_amount,transaction_id,payment_type,package_title,package_duration,package_duration_type,package_discount_percentage,created_date,status from payment_details where ((payment_type=0 and status=1) or payment_type=1)  and userinfo_id='"+userid+"'  order by id desc limit "+(pageid-1)+","+total;
 	 		
 	 		return template.query(sql, new ResultSetExtractor<List<Payment_Details>>() {
 	 			
@@ -203,7 +203,7 @@ public Boolean saveorderinfo(final Payment_Details e){
 	     // total record
 	     public Payment_Details my_all_transaction_total_record(long userid){    
 	    	 
-				String sql="select count(*) as totalrecord from payment_details where userinfo_id=? and status=1";
+				String sql="select count(*) as totalrecord from payment_details where userinfo_id=? and ((payment_type=0 and status=1) or payment_type=1)";
 			    
 				return template.queryForObject(sql, new Object[]{userid},new BeanPropertyRowMapper<Payment_Details>(Payment_Details.class));    
 			} 
