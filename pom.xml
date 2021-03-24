@@ -96,11 +96,12 @@
 		        <version>4.3.2.RELEASE</version>
 		 		</dependency>
 		 		
-		 		<dependency>
+		 		<!-- Comment out gson which creating problem in click send sms api -->
+		 		<!-- <dependency>
 				    <groupId>com.google.code.gson</groupId>
 				    <artifactId>gson</artifactId>
 				    <version>1.4</version>
-				</dependency>
+				</dependency> -->  
 				
 				<!-- Apache Commons FileUpload --> 
 				<dependency>
@@ -144,6 +145,13 @@
 			    <groupId>org.springframework</groupId>
 			    <artifactId>spring-context-support</artifactId>
 			    <version>3.1.1.RELEASE</version>
+			</dependency>
+			<!-- sms and email api -->
+			<dependency>
+			  <groupId>com.github.clicksend</groupId>
+			  <artifactId>clicksend-java-client</artifactId>
+			  <version>1.0.0</version>
+			  <scope>compile</scope>
 			</dependency>
  	 
   </dependencies>
