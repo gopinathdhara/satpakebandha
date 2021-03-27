@@ -30,6 +30,21 @@
 .chosen-choices{
 padding:6px !important;
 }
+fieldset {
+  /*background-color: #eeeeee;*/
+}
+
+legend {
+  background-color: #f58320;
+  color: white;
+  padding: 5px 10px;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+input {
+  margin: 5px;
+}
 </style>
   <!-- Start main-content -->
   <div class="main-content mgtop1">
@@ -83,15 +98,23 @@ padding:6px !important;
               
               
               <div id="step2" >
-              
-			              		<div class="row">
+              				
+              				<fieldset>
+              				
+              				<legend>
+              					Profile Details :
+              					
+              					<!--  <div class="row">
 				              		
 				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	
 					             		<p style="color:#D30665;font-weight: bold;">** Profile Details</p>
 				             		</div>
 				             		
-				             	</div>
+				             	</div>-->
+              				
+              				</legend>
+			              		
 			              
 				              		<div class="row">
 								                <div class="form-group col-md-6">
@@ -351,11 +374,25 @@ padding:6px !important;
 					                
 					                
 			              </div>
-			            <div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
+			              
+			              
+			              
+			              
+			           </fieldset>   
+			              
+			              
+			<fieldset>
+			              
+			              <legend>
+			              Location Details : 
+			              		<!-- <div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	
 						             	<p style="color:#1601CF;font-weight: bold;">** Location Details</p>
 					             	
-				        </div>
+				       			 </div> -->
+			              
+			              </legend>
+			            
 			              <div class="row">
 					                <div class="form-group col-md-6">
 					                  <label for="form_choose_password">Country </label>
@@ -464,19 +501,23 @@ padding:6px !important;
 			              
 			              </div>
 			              
-              
+              </fieldset>
            </div>   
               
-              
+    
+	           
+	           
 	            				 
 		   		<div id="step3" >  
 	              
+				              <fieldset>
+				              <legend>Career Details : </legend>
 				              
-					           		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
+					           		<!-- <div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	
 						             	<p style="color:#01840C;font-weight: bold;">** Career Details</p>
 					             	
-				             		</div>
+				             		</div> -->
 				              
 				              <div class="row">
 				              		
@@ -694,7 +735,7 @@ padding:6px !important;
 			             	 </div>
 		             	 </div>
 			   		
-			   		
+			   		</fieldset>
 			   	 </div>			 
 		   					 
 		   					 
