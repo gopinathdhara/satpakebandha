@@ -17,7 +17,28 @@
   
   <!-- Header -->
   <%@ include file="includes/headerinner.jsp" %>
-  
+  <style>
+.chosen-choices{
+padding:6px !important;
+}
+padding:6px !important;
+}
+fieldset {
+  /*background-color: #eeeeee;*/
+}
+
+legend {
+  background-color: #f58320;
+  color: white;
+  padding: 5px 10px;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+input {
+  margin: 5px;
+}
+</style>
   <!-- Start main-content -->
   <div class="main-content">
     <!-- Section: inner-header -->
@@ -95,27 +116,29 @@
 		              </div>
 		              <hr>
               <div id="step1">
+              
+               
 	                <div class="row">
 	              		<div class="form-group col-md-12">
 		             	
-		              			<p class="text-gray">You can edit your profile here.</p>
+		              			<p class="text-gray">You can edit your profile here.  Mandatory <span class="mandtry">*</span></p>
 		             	
 	             		</div>
+	             	</div>
+	            <fieldset>
+	              				<legend>
+	              					Account Details :
+	              				</legend>
+	              				
+	             	<!-- <div class="row">	
 	             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 			             	<p class="" style="color: #D30665;font-weight: bold;"> ** Account Details</p>
 			             	
 		             		
 	             		</div>
-	             		<div class="form-group col-md-3">
-			             	
-			             	<p>  Mandatory <span class="mandtry">*</span></p>
-		             	
-	             		</div>
-	             	</div>
-             	
-             	
-             	
-             	
+	             	</div> -->
+	             	
+	             	
              	
 		             <div class="row">
 				                <div class="form-group col-md-6">
@@ -149,13 +172,18 @@
 		              </div>
 		              
 		              
-              
+              		 </fieldset>
               </div>
               
               
               <div id="step2" >
               
-			              		<div class="row">
+              		<fieldset>
+	              				<legend>
+	              					Basic Details :
+	              				</legend>
+              
+			              		<!-- <div class="row">
 				              		
 				             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 						             	<p class="" style="color: #1601CF;font-weight: bold;"> ** Basic Details</p>
@@ -163,7 +191,7 @@
 					             	
 				             		</div>
 				             		
-				             	</div>
+				             	</div> -->
 			              
 				              		<div class="row">
 				              		
@@ -349,7 +377,14 @@
 					                </div>
 					                
 			              </div>
-			              <div class="row">
+			       </fieldset>
+			              
+			              
+			           <fieldset>
+	              				<legend>
+	              					Lifestyle Habits :
+	              				</legend>   
+			              <!-- <div class="row">
 				              		
 				             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 						             	<p class="" style="color: red ;font-weight: bold;"> ** Lifestyle Habits</p>
@@ -357,7 +392,8 @@
 					             	
 				             		</div>
 				             		
-				          </div>
+				          </div> -->
+				          
 			              <div class="row">
 			               		<div class="form-group col-md-12">
 			               		 <label for="form_choose_password">Body Type : </label>
@@ -428,8 +464,15 @@
  										<font color='red'><form:errors path='smoking_habits' /></font>
 			               		</div>
 			               </div>
-			              
-			              <div class="row">
+			             </fieldset>
+			             
+			             
+			             <fieldset>
+	              				<legend>
+	              					Location Details :
+	              				</legend>   
+	              				
+			              <!-- <div class="row">
 				              		
 				             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 						             	<p class="" style="color: #f58320 ;font-weight: bold;"> ** Location Details</p>
@@ -437,7 +480,7 @@
 					             	
 				             		</div>
 				             		
-				          </div>
+				          </div> -->
 			              
 			              <c:set var="userdt" value="<%=userdt%>" />
 			              <div class="row">
@@ -502,13 +545,19 @@
 					                </div>
 					                
 			              </div>
+			              
+			           </fieldset>   
               
            </div>   
               
               
 	            <div id="step3" >  
-	              
-				              <div class="row">
+	              <fieldset>
+	              				<legend>
+	              					Career Details :
+	              				</legend> 
+	              				
+				              <!-- <div class="row">
 					              		
 					             		<div class="form-group col-md-12" style="border-bottom: 1px dashed #ccc;">
 							             	<p class="" style="color: #01840C;font-weight: bold;"> ** Career Details</p>
@@ -516,7 +565,7 @@
 						             	
 					             		</div>
 					             		
-					           </div>
+					           </div> -->
 				              
 				              <div class="row">
 				              
@@ -589,6 +638,7 @@
 			             	 </div>
 		             	 </div>
 			   		
+			   		</fieldset>
 			   		
 			   	 </div>				 
 		   					 

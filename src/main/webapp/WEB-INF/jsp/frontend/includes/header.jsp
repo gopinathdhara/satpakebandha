@@ -195,7 +195,7 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
         <!-- Modal body -->
         <div class="modal-body ofrmodbd"  style="background-image:url(<c:url value="/resources/images/membership/responsivepopup.png" />);">
           <h4 style="" class="discnth1">85% Discount<br>
-				Festive Offer Up To<br>31/03/2021<img src="<c:url value="/resources/images/membership/redrose.jpg" />" class="rdrs"/></h4>
+				Festive Offer Up To<br>30/04/2021<img src="<c:url value="/resources/images/membership/redrose.jpg" />" class="rdrs"/></h4>
 				
 		 	
 				

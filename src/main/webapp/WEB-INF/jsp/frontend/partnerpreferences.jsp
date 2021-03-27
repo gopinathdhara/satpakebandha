@@ -30,6 +30,23 @@
 .chosen-choices{
 padding:6px !important;
 }
+padding:6px !important;
+}
+fieldset {
+  /*background-color: #eeeeee;*/
+}
+
+legend {
+  background-color: #f58320;
+  color: white;
+  padding: 5px 10px;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+input {
+  margin: 5px;
+}
 </style>
   <!-- Start main-content -->
   <div class="main-content mgtop1">
@@ -116,8 +133,12 @@ padding:6px !important;
               
               
               <div id="step2" >
-              
-			              		<div class="row">
+              			<fieldset>
+	              				<legend>
+	              					Basic & Religion Preferences :
+	              				</legend> 
+	              				
+			              		<!-- <div class="row">
 				              		
 				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: #D30665;font-weight: bold;"> ** Basic & Religion Preferences</p>
@@ -125,7 +146,7 @@ padding:6px !important;
 					             	
 				             		</div>
 				             		
-				             	</div>
+				             	</div> -->
 			              
 				              		<div class="row">
 								                <div class="form-group col-md-6">
@@ -385,14 +406,23 @@ padding:6px !important;
 					                
 					                
 			              </div>
-			              <div class="row">
+			              
+			              </fieldset>
+			             
+			             <fieldset>
+			             
+					             <legend>
+					             	Lifestyle Habits :
+					             </legend>
+			              
+			              <!--  <div class="row">
 				              		
 				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: rgb(245, 131, 32) !important;font-weight: bold;"> ** Lifestyle Habits</p>
 						             	
 				             		</div>
 				             		
-				           </div>
+				           </div>-->
 			              
 			              <div class="row">
 			               		<div class="form-group col-md-12">
@@ -473,9 +503,14 @@ padding:6px !important;
 			                </div>
 			          
 			               
-			               
-			               
-			            <div class="row">
+			              </fieldset>
+			              
+			              <fieldset>
+					               <legend> 
+					             		  Location Preferences :
+					               </legend>
+					               
+			            <!-- <div class="row">
 				              		
 				             		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: #01840C;font-weight: bold;"> ** Location Preferences</p>
@@ -483,7 +518,7 @@ padding:6px !important;
 					             	
 				             		</div>
 				             		
-				        </div>
+				        </div> -->
 			            
 			              <div class="row">
 					                <div class="form-group col-md-6">
@@ -593,19 +628,25 @@ padding:6px !important;
 			              
 			              </div>
 			              
+			              </fieldset>
+			              
               
            </div>   
               
               
 	            				 
-		   		<div id="step3" >  
-	              
+		   		<div id="step3" >
+		   		  
+	              		<fieldset>
+				              		<legend>
+				              			Professional Preferences :
+				              		</legend>
 				              
-					           		<div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
+					           		<!-- <div class="form-group col-md-12"  style="border-bottom: 1px dashed #ccc;">
 						             	<p style="color: #1601CF;font-weight: bold;">  ** Professional Preferences</p>
 						             	
 					             	
-				             		</div>
+				             		</div> -->
 				              
 				              <div class="row">
 				              		
@@ -812,7 +853,7 @@ padding:6px !important;
 			             	 </div>
 		             	 </div>
 			   		
-			   		
+			   			</fieldset>
 			   	 </div>			 
 		   					 
 		   					 
