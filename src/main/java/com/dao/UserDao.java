@@ -49,7 +49,7 @@ public class UserDao {
 		}
 		
 		
-	    String query="insert into userinfo(gender,name,email,username,password,dob,religion_id,mother_tongue_id,marital_status_id,height_info_id,highest_education_id,caste_info_id,annual_income_id,employed_in_id,occupation_info_id,express_yourself,phone_no,country_id,state_id,city_id,weight_info,email_verification_status) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";  
+	    String query="insert into userinfo(gender,name,email,username,password,dob,religion_id,mother_tongue_id,marital_status_id,height_info_id,highest_education_id,caste_info_id,annual_income_id,employed_in_id,occupation_info_id,express_yourself,phone_no,country_id,state_id,city_id,weight_info,email_verification_status,phone_verification_status,phone_verification_code) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";  
 	    return template.execute(query,new PreparedStatementCallback<Long>(){  
 	      
 	    public Long doInPreparedStatement(PreparedStatement ps)  
@@ -80,7 +80,9 @@ public class UserDao {
 	        ps.setString(20,e.getCity_id());
 	        
 	        ps.setString(21,e.getWeight_info());
-	        ps.setInt(22,1);
+	        ps.setInt(22,0);
+	        ps.setInt(23,0);
+	        ps.setString(24,e.getPhone_verification_code());
 	        ps.execute(); 
 	        
 	        ResultSet rs = ps.getGeneratedKeys();
@@ -416,14 +418,20 @@ public class UserDao {
 				public Long  login_check(Login obj)
 				{
 					//check if user is email verified and active status
-					String sql = "SELECT u.id FROM userinfo u WHERE email=? AND password=? and email_verification_status=1 and status=1";
+					String sql = "SELECT u.id FROM userinfo u WHERE email=? AND password=?";
 					try {
 						long userId =template.queryForObject(sql, new Object[] { obj.getEmail(), getMd5(obj.getPassword()) },Long.class);
 					
 					if(userId >0)
 					{
-						String query="update userinfo set online_status=1 where id='"+userId+"' ";  
-					    template.update(query);  
+						String sql1 = "SELECT count(*) as count FROM userinfo u WHERE email=? AND password=? AND email_verification_status=1 AND phone_verification_status=1 AND status=1 ";
+						int count =template.queryForObject(sql, new Object[] { obj.getEmail(), getMd5(obj.getPassword()) },int.class);
+						if(count==1)
+						{
+							String query="update userinfo set online_status=1 where id='"+userId+"' ";  
+						    template.update(query);  
+						}
+						
 					}
 					
 					return userId;
@@ -811,6 +819,62 @@ public class UserDao {
 		public User check_email_exist(String email){    
 		    String sql="select count(*) as totalrecord from userinfo where email=?";    
 		    return template.queryForObject(sql, new Object[]{email},new BeanPropertyRowMapper<User>(User.class));    
+		}
+		
+		//check if mobile code is ok for phone verification
+		
+		public int check_if_mobile_code_ok(final long userid,String phcode)
+		{
+			String sql1 = "SELECT count(*) as count FROM userinfo u WHERE id=? AND phone_verification_status=1";
+			
+			try {
+				int count1 =template.queryForObject(sql1, new Object[] { userid },int.class);
+			
+						if(count1==1)
+						{
+							
+							return 2;
+						    
+						}
+						
+			}
+			catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+				return 0;
+			}
+			
+			String sql = "SELECT count(*) as count FROM userinfo u WHERE phone_verification_code=? AND id=?";
+			try {
+				int count =template.queryForObject(sql, new Object[] { phcode, userid },int.class);
+			
+						if(count==1)
+						{
+							String query="update userinfo set phone_verification_status=1  where id=?";  
+						    return template.execute(query,new PreparedStatementCallback<Integer>(){  
+						      
+						    public Integer doInPreparedStatement(PreparedStatement ps)  
+						            throws SQLException, DataAccessException { 
+						    	
+						        ps.setLong(1,userid);
+						        ps.execute(); 
+						        
+								return 1;
+						              
+						    }  
+						    }); 
+						    
+						}
+						else {
+							return 0;
+						}
+			}
+			catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+				return 0;
+			}
+			 
 		}
 }
 

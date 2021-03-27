@@ -104,6 +104,8 @@ public class User {
 	private int email_verification_status;
 	private int status;
 	
+	private String phone_verification_code;
+	
 	private int is_mangalik;
 	
 	public int getStatus() {
@@ -492,6 +494,12 @@ public class User {
 	}
 	public void setIs_mangalik(int is_mangalik) {
 		this.is_mangalik = is_mangalik;
+	}
+	public String getPhone_verification_code() {
+		return phone_verification_code;
+	}
+	public void setPhone_verification_code(String phone_verification_code) {
+		this.phone_verification_code = phone_verification_code;
 	}
 	
 	

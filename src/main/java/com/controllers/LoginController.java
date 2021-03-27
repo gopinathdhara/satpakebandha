@@ -56,8 +56,9 @@ public class LoginController {
 	    	else
 	    	{
 	    		//check login
+	    		
 	    		long userid=dao.login_check(u);
-	    		//System.out.print("yy"+u.getPassword());
+	    		
 				if(userid==0)
 				{
 					m.addAttribute("errmsg","Invalid email id or password");
@@ -66,9 +67,27 @@ public class LoginController {
 				else
 				{
 					Profile pobj=dao.editprofiledetails(userid);
+					if(pobj.getPhone_verification_status()==0)
+					{
+						m.addAttribute("errmsg","Mobile no is not verified");
+						return "redirect:/login";
+					}
+					else if(pobj.getEmail_verification_status()==0)
+					{
+						m.addAttribute("errmsg","Email is not verified");
+						return "redirect:/login";
+					}
+					else if(pobj.getStatus()==0)
+					{
+						m.addAttribute("errmsg","Your account is deactivated.");
+						return "redirect:/login";
+					}
+					
 					session.setAttribute("sess_usr_id", userid);
 					session.setAttribute("sess_usr_type",0);
 					//int userid=(Integer) session.getAttribute("sess_usr_id");
+					
+					
 					if(pobj.getUpdate_profile_flag()==0)
 					{
 						return "redirect:/editprofile?notifymsg=profile-update-pending";

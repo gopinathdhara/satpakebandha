@@ -1,10 +1,13 @@
 package com.controllers;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -30,9 +33,20 @@ import com.beans.Email_Template;
 import com.beans.Login;
 import com.beans.State;
 import com.beans.User;
+import com.beans.UserActivity;
 import com.dao.UserDao;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import ClickSend.ApiClient;
+import ClickSend.ApiException;
+import ClickSend.Api.SmsApi;
+import ClickSend.Api.TransactionalEmailApi;
+import ClickSend.Model.Email;
+import ClickSend.Model.EmailFrom;
+import ClickSend.Model.EmailRecipient;
+import ClickSend.Model.SmsMessage;
+import ClickSend.Model.SmsMessageCollection;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -68,6 +82,8 @@ public class RegisterController {
             return "frontend/register";
         }
     	
+    	String verification_code=this.getRandomNumberString();
+    	u.setPhone_verification_code(verification_code);
     	//##########check email already exist##############
     	User usrchkemlobj=dao.check_email_exist(u.getEmail());
     	long user_id=0;
@@ -85,7 +101,7 @@ public class RegisterController {
         
         
         /*################send mail parameter##########################*/
-    	/*
+    	
         String user_id_mail=String.valueOf(user_id);
         String recipientAddress = u.getEmail();
         
@@ -123,20 +139,119 @@ public class RegisterController {
          String replaceString2=replaceString1.replace("{{heading}}","Activate Your Account");
          String replaceString3=replaceString2.replace("{{mytext}}","You have registered successfully. Please click this below link to activate your account.<br/> "+msg);
          String replaceString4=replaceString3.replace("{{sitelink}}",Common_Info.liveurl);
+         String replaceString5=replaceString4.replace("{{username}}",u.getName());
        //###############call dao to get email templateinfo###################
         
         String from=Common_Info.from_email;
         
         
       //##########get info from common setting class############
-        sendMail(from,recipientAddress,subject,replaceString4);
+        //sendMail(from,recipientAddress,subject,replaceString4);
         
-        */
+        
         /*################send mail parameter##########################*/
-    	
         
-        return "redirect:/login";//will redirect to login request mapping    
+        //###################click send email api##########################
+        
+        ApiClient defaultClient = new ApiClient();
+	    defaultClient.setUsername(Common_Info.clicksend_email);
+	    defaultClient.setPassword(Common_Info.clicksend_apikey);
+	    TransactionalEmailApi apiInstance = new TransactionalEmailApi(defaultClient);
+	    EmailRecipient emailRecipient=new EmailRecipient();
+	    emailRecipient.email(recipientAddress);
+	    emailRecipient.name(u.getName());
+	    List<EmailRecipient> emailRecipientList=Arrays.asList(emailRecipient);
+	    EmailFrom emailFrom=new EmailFrom();
+	    emailFrom.emailAddressId("15535");
+	    emailFrom.name("7pakebanhda.in");
+	    
+	    Email email = new Email(); // Email | Email model
+	    email.to(emailRecipientList);
+	    email.from(emailFrom);
+	    email.subject(subject);
+	    email.body(replaceString5);
+	    
+	    try {
+	        String api_result = apiInstance.emailSendPost(email);
+	        System.out.println(api_result);
+	    } catch (ApiException e) {
+	        System.err.println("Exception when calling TransactionalEmailApi#emailSendPost");
+	        e.printStackTrace();
+	    }
+	  
+	    
+	  //###################click send email api##########################
+	    
+	  //###################click send sms api######################
+	    
+		
+	    SmsApi apiInstance_sms = new SmsApi(defaultClient);
+
+	    SmsMessage smsMessage=new SmsMessage();
+	    
+	    smsMessage.body("Hi from 7pakebandha.in, Your OTP is "+verification_code+".Verify your mobile using it.");
+	    smsMessage.to(u.getPhone_no());
+	    smsMessage.source("java");
+
+	    List<SmsMessage> smsMessageList=Arrays.asList(smsMessage);
+	    // SmsMessageCollection | SmsMessageCollection model
+	    SmsMessageCollection smsMessages = new SmsMessageCollection();
+	    smsMessages.messages(smsMessageList);
+	    try {
+	        String result_sms_api = apiInstance_sms.smsSendPost(smsMessages);
+	        System.out.println(result_sms_api);
+	    } catch (ApiException e) {
+	        System.err.println("Exception when calling SmsApi#smsSendPost");
+	        e.printStackTrace();
+	    }
+	    
+	  //###################click send sms api######################
+        
+        return "redirect:/verify-phoneno?usrid="+base64encodedString;//will redirect to verify phone no    
     }
+    
+    public static String getRandomNumberString() {
+        // It will generate 6 digit random Number.
+        // from 0 to 999999
+        Random rnd = new Random();
+        int number = rnd.nextInt(999999);
+
+        // this will convert any number sequence into 6 character.
+        return String.format("%06d", number);
+    }
+    
+    @RequestMapping("/verify-phoneno")    
+    public String verifyphoneno(Model m,HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException{  
+		//m.addAttribute("command", new Login()); 
+		String userid=request.getParameter("usrid");
+    	// Decode
+        byte[] base64decodedBytes = Base64.getDecoder().decode(userid);
+        String originaluserid=new String(base64decodedBytes, "utf-8");
+        //System.out.print("kk"+originaluserid);
+        long useriddb=Long.parseLong(originaluserid.toString());
+        request.setAttribute("useriddb",useriddb);
+        return "frontend/verifyphoneno";   
+    } 
+    // for phone no verify
+    @RequestMapping("/check_if_mobile_code_ok")
+    public void check_if_mobile_code_ok(HttpServletRequest request,HttpServletResponse response) throws IOException{
+    	long useriddb=Long.parseLong(request.getParameter("useriddb").toString());
+    	String phonecode=request.getParameter("phonecode");
+        int status=dao.check_if_mobile_code_ok(useriddb,phonecode);
+        
+		 List<User> l1=new ArrayList();
+		 User uaobj1=new User();
+		 uaobj1.setStatus(status);
+		 l1.add(uaobj1);
+		 
+		 Gson gsonBuilder = new GsonBuilder().create();
+		 String jsonFromJavaArrayList = gsonBuilder.toJson(l1);
+		 response.setContentType("application/json");
+		 response.setCharacterEncoding("UTF-8");
+		 response.getWriter().write(jsonFromJavaArrayList);
+    	
+    }
+    
     
     /*################send mail##########################*/
     public void sendMail(final String from, final String to,final String subject,final String msg) {  

@@ -79,11 +79,13 @@ public class CmsController {
         return "frontend/cancel_policy";   
     } 
 	
-	/*click send sms api*/
+	/*click send test sms api*/
+	
+	/*
 	@RequestMapping("/mysmsapi")     
     public void mysmsapi() throws IOException{ 
 		
-			//System.out.print("sms1");
+			
 			ApiClient defaultClient = new ApiClient();
 		    defaultClient.setUsername("siteadmin@7pakebandha.in");
 		    defaultClient.setPassword("31551A39-41AF-7FB3-B0AF-EE34147BEE33");
@@ -96,7 +98,7 @@ public class CmsController {
 		    smsMessage.source("java");
 
 		    List<SmsMessage> smsMessageList=Arrays.asList(smsMessage);
-		    // SmsMessageCollection | SmsMessageCollection model
+		    
 		    SmsMessageCollection smsMessages = new SmsMessageCollection();
 		    smsMessages.messages(smsMessageList);
 		    try {
@@ -106,11 +108,12 @@ public class CmsController {
 		        System.err.println("Exception when calling SmsApi#smsSendPost");
 		        e.printStackTrace();
 		    }
-		//System.out.print("sms");
+		
     } 
+	*/
 	
-	
-	//email api
+	//test email api click send
+	/*
 	@RequestMapping("/myemailapi")      
     public void myemailapi(HttpServletRequest request) throws IOException, ParseException{ 
 	    
@@ -119,26 +122,26 @@ public class CmsController {
 	    defaultClient.setPassword("31551A39-41AF-7FB3-B0AF-EE34147BEE33");
 	    TransactionalEmailApi apiInstance = new TransactionalEmailApi(defaultClient);
 	    EmailRecipient emailRecipient=new EmailRecipient();
-	    emailRecipient.email("raghunathdhara12@gmail.com");
-	    emailRecipient.name("raghu");
+	    emailRecipient.email("sampa19721@gmail.com");
+	    emailRecipient.name("sampa");
 	    List<EmailRecipient> emailRecipientList=Arrays.asList(emailRecipient);
 	    EmailFrom emailFrom=new EmailFrom();
 	    emailFrom.emailAddressId("15535");
 	    emailFrom.name("gopi");
 	    
-	    Email email = new Email(); // Email | Email model
+	    Email email = new Email(); 
 	    email.to(emailRecipientList);
 	    email.from(emailFrom);
 	    email.subject("7pakebandha Email Verificaion for you");
 	    
-	  //###############call dao to get email templateinfo###################
+	  
 	    String user_id_mail=String.valueOf(1);
 	    String msg="";
 	    String url = request.getRequestURL().toString();
 	    String base64encodedString = Base64.getEncoder().encodeToString(user_id_mail.getBytes("utf-8"));
 	    String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";     
 		
-		//System.out.print(baseURL);
+		
 		
 		
 		if(baseURL.contains("localhost"))
@@ -157,7 +160,7 @@ public class CmsController {
         String replaceString2=replaceString1.replace("{{heading}}","Activate Your Account");
         String replaceString3=replaceString2.replace("{{mytext}}","You have registered successfully. Please click this below link to activate your account.<br/> "+msg);
         String replaceString4=replaceString3.replace("{{sitelink}}",Common_Info.liveurl);
-      //###############call dao to get email templateinfo###################
+      
 	    
 	    email.body(replaceString4);
 	    
@@ -168,5 +171,5 @@ public class CmsController {
 	        System.err.println("Exception when calling TransactionalEmailApi#emailSendPost");
 	        e.printStackTrace();
 	    }
-	  }
+	  }*/
 }

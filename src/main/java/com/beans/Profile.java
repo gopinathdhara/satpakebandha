@@ -105,7 +105,9 @@ public class Profile {
 	
 	private int update_profile_flag;
 	
-	
+	private int email_verification_status;
+	private int phone_verification_status;
+	private int status;
 	
 	public int getUpdate_profile_flag() {
 		return update_profile_flag;
@@ -463,6 +465,24 @@ public class Profile {
 	}
 	public void setIs_mangalik(int is_mangalik) {
 		this.is_mangalik = is_mangalik;
+	}
+	public int getEmail_verification_status() {
+		return email_verification_status;
+	}
+	public void setEmail_verification_status(int email_verification_status) {
+		this.email_verification_status = email_verification_status;
+	}
+	public int getPhone_verification_status() {
+		return phone_verification_status;
+	}
+	public void setPhone_verification_status(int phone_verification_status) {
+		this.phone_verification_status = phone_verification_status;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 	
