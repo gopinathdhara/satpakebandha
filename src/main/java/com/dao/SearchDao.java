@@ -222,7 +222,7 @@ public boolean save_search_info(final Regular_Search e){
 		
 		String oppositegender="";
 		//get user details
-		String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+		String sql1 = "SELECT u.gender FROM userinfo u WHERE  status=1 and id=?";
 		try {
 		String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
 	
@@ -240,7 +240,7 @@ public boolean save_search_info(final Regular_Search e){
 		}
 		
 		
-		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"'";
+		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"'";
 		
 		//for new partner match
 		if(paramtype.equals("allpartnernewmatch"))
@@ -469,7 +469,7 @@ public boolean save_search_info(final Regular_Search e){
 		
 		String oppositegender="";
 		//get user details
-		String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+		String sql1 = "SELECT u.gender FROM userinfo u WHERE  status=1 and id=?";
 		try {
 		String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
 	
@@ -487,7 +487,7 @@ public boolean save_search_info(final Regular_Search e){
 		}
 		
 		
-String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"' ";
+String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"' ";
 		
 		//for new partner match
 		if(paramtype.equals("allpartnernewmatch"))
@@ -1036,7 +1036,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		
 		String oppositegender=this.getoppositegender(userid);
 		
-		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"'";
+		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"'";
 		
 		//for new user
 		if(paramtype.equals("new"))
@@ -1220,7 +1220,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		
 		String oppositegender=this.getoppositegender(userid);
 		
-		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"'";
+		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"'";
 		
 		//for new user
 		if(paramtype.equals("new"))
@@ -1404,7 +1404,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 	   {
 		   String oppositegender="";
 			//get user details
-			String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+			String sql1 = "SELECT u.gender FROM userinfo u WHERE  status=1 and id=?";
 			try {
 			String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
 		
@@ -1432,7 +1432,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 			Regular_Search rsobj=null;
 			String oppositegender=this.getoppositegender(userid);
 			
-			String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from mother_tongue m inner join userinfo u on u.mother_tongue_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+			String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from mother_tongue m inner join userinfo u on u.mother_tongue_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' ";
 			
 			//all user
 			if(paramtype.equals("all"))
@@ -1524,7 +1524,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 			Regular_Search rsobj=null;
 			String oppositegender=this.getoppositegender(userid);
 			
-			String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from marital_status m inner join userinfo u on u.marital_status_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+			String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from marital_status m inner join userinfo u on u.marital_status_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' ";
 			
 			//all user
 			if(paramtype.equals("all"))
@@ -1616,7 +1616,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 			Regular_Search rsobj=null;
 			String oppositegender=this.getoppositegender(userid);
 			
-			String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from religion m inner join userinfo u on u.religion_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+			String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from religion m inner join userinfo u on u.religion_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' ";
 			
 			//all user
 			if(paramtype.equals("all"))
@@ -1709,7 +1709,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 					Regular_Search rsobj=null;
 					String oppositegender=this.getoppositegender(userid);
 					
-					String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from caste_info m inner join userinfo u on u.caste_info_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"'  ";
+					String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from caste_info m inner join userinfo u on u.caste_info_id=m.id where  u.status=1 and u.gender='"+oppositegender+"'  ";
 					
 					//all user
 					if(paramtype.equals("all"))
@@ -1799,7 +1799,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 					Regular_Search rsobj=null;
 					String oppositegender=this.getoppositegender(userid);
 					
-					String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from highest_education m inner join userinfo u on u.highest_education_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+					String sql="select t.* from (select m.id,m.name,count(m.id) as countitem from highest_education m inner join userinfo u on u.highest_education_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' ";
 					
 					//all user
 					if(paramtype.equals("all"))
@@ -1891,7 +1891,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 					Regular_Search rsobj=null;
 					String oppositegender=this.getoppositegender(userid);
 					
-					String sql="select t.* from (select m.id,m.income_value as name,count(m.id) as countitem from annual_income m inner join userinfo u on u.annual_income_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+					String sql="select t.* from (select m.id,m.income_value as name,count(m.id) as countitem from annual_income m inner join userinfo u on u.annual_income_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' ";
 					//all user
 					if(paramtype.equals("all"))
 					{
@@ -1981,7 +1981,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 					Regular_Search rsobj=null;
 					String oppositegender=this.getoppositegender(userid);
 					
-					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from employed_in m inner join userinfo u on u.employed_in_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from employed_in m inner join userinfo u on u.employed_in_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' ";
 					
 					//all user
 					if(paramtype.equals("all"))
@@ -2072,7 +2072,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 					Regular_Search rsobj=null;
 					String oppositegender=this.getoppositegender(userid);
 					
-					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from occupation_info m inner join userinfo u on u.occupation_info_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from occupation_info m inner join userinfo u on u.occupation_info_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' ";
 					
 					//all user
 					if(paramtype.equals("all"))
@@ -2163,7 +2163,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 					Regular_Search rsobj=null;
 					String oppositegender=this.getoppositegender(userid);
 					
-					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from countries m inner join userinfo u on u.country_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 ";
+					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from countries m inner join userinfo u on u.country_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 ";
 					//all user
 					if(paramtype.equals("all"))
 					{
@@ -2254,7 +2254,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 					System.out.println(paramtype);
 					String oppositegender=this.getoppositegender(userid);
 					
-					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from states m inner join userinfo u on u.state_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 ";
+					String sql="select t.* from (select m.id,m.name as name,count(m.id) as countitem from states m inner join userinfo u on u.state_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 ";
 					
 					//all user
 					if(paramtype.equals("all"))
@@ -2502,7 +2502,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 	{
 		String oppositegender="";
 		//get user details
-		String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+		String sql1 = "SELECT u.gender FROM userinfo u WHERE  status=1 and id=?";
 		try {
 		String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
 	
@@ -2520,7 +2520,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		}
 		
 		
-		String sql="select t.* from ( (select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+		String sql="select t.* from ( (select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' ";
 		
 		String[] searchwords = input_keyword.split(",");
 		String[] searchwords_yrs_chk_arr;
@@ -2551,7 +2551,7 @@ public Boolean partner_preferences_save(final Regular_Search e){
 		
 		
 		 sql+=" ) ";
-		 sql+="union (select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and (u.id>0 and (";
+		 sql+="union (select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' and (u.id>0 and (";
 		
 		String[] searchwords2 = input_keyword.split(",");
 		//System.out.println(Arrays.toString(words));

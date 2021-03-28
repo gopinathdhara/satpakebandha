@@ -66,7 +66,9 @@ public class LoginController {
 				}
 				else
 				{
-					Profile pobj=dao.editprofiledetails(userid);
+					Profile pobj=dao.editprofiledetails(userid); 
+					 
+					/* 
 					if(pobj.getPhone_verification_status()==0)
 					{
 						m.addAttribute("errmsg","Mobile no is not verified");
@@ -77,7 +79,9 @@ public class LoginController {
 						m.addAttribute("errmsg","Email is not verified");
 						return "redirect:/login";
 					}
-					else if(pobj.getStatus()==0)
+					*/
+					
+					if(pobj.getStatus()==0)
 					{
 						m.addAttribute("errmsg","Your account is deactivated.");
 						return "redirect:/login";

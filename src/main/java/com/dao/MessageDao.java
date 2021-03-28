@@ -44,7 +44,7 @@ public class MessageDao {
 		
 		String oppositegender=this.getoppositegender(userid);
 		
-		return template.query("select t.* from (select id,name,online_status,profile_image,gender,u.matrimony_id from userinfo u where u.email_verification_status=1 and u.status=1 and u.online_status=1 and u.gender='"+oppositegender+"') t order by t.name asc", new ResultSetExtractor<List<User>>() {
+		return template.query("select t.* from (select id,name,online_status,profile_image,gender,u.matrimony_id from userinfo u where  u.status=1 and u.online_status=1 and u.gender='"+oppositegender+"') t order by t.name asc", new ResultSetExtractor<List<User>>() {
 			
 			public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {
 				// TODO Auto-generated method stub
@@ -73,7 +73,7 @@ public class MessageDao {
 	   {
 		   String oppositegender="";
 			//get user details
-			String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+			String sql1 = "SELECT u.gender FROM userinfo u WHERE  status=1 and id=?";
 			try {
 			String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
 		
@@ -98,7 +98,7 @@ public class MessageDao {
      public List<Message> individual_user_chat_message(long senderid, long receiverid)
 	{
 		
-		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),u.name,u.id as usrid,u.online_status,u.profile_image,m.msg,u.gender from message m,userinfo u where u.email_verification_status=1 and u.status=1 and u.id=m.sender_id and ((m.sender_id='"+senderid+"' and m.receiver_id='"+receiverid+"') or (m.sender_id='"+receiverid+"' and m.receiver_id='"+senderid+"')) order by m.id asc ";
+		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),u.name,u.id as usrid,u.online_status,u.profile_image,m.msg,u.gender from message m,userinfo u where  u.status=1 and u.id=m.sender_id and ((m.sender_id='"+senderid+"' and m.receiver_id='"+receiverid+"') or (m.sender_id='"+receiverid+"' and m.receiver_id='"+senderid+"')) order by m.id asc ";
 		
 		return template.query(sql, new ResultSetExtractor<List<Message>>() {
 			
@@ -131,7 +131,7 @@ public class MessageDao {
 	}
      // get receiver details
      public User get_chat_receiver_profiledetails_by_id(long uid){    
-			String sql="select u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image from userinfo u where u.email_verification_status=1 and u.status=1 and u.id=?";
+			String sql="select u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image from userinfo u where  u.status=1 and u.id=?";
 		    
 			return template.queryForObject(sql, new Object[]{uid},new BeanPropertyRowMapper<User>(User.class));    
 		} 
@@ -140,7 +140,7 @@ public class MessageDao {
      public List<Message> check_if_message_comes(long senderid, long receiverid,long lastmsgid)
  	{
  		
- 		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),u.name,u.id as usrid,u.online_status,u.profile_image,m.msg,u.gender from message m,userinfo u where u.email_verification_status=1 and u.status=1 and u.id=m.sender_id and (m.sender_id='"+receiverid+"' and m.receiver_id='"+senderid+"') and m.id >"+lastmsgid+" order by m.id asc ";
+ 		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),u.name,u.id as usrid,u.online_status,u.profile_image,m.msg,u.gender from message m,userinfo u where  u.status=1 and u.id=m.sender_id and (m.sender_id='"+receiverid+"' and m.receiver_id='"+senderid+"') and m.id >"+lastmsgid+" order by m.id asc ";
  		
  		return template.query(sql, new ResultSetExtractor<List<Message>>() {
  			
@@ -199,7 +199,7 @@ public class MessageDao {
      public List<Message> check_insert_message(long senderid, long receiverid,long lastinsertid)
   	{
     	
-  		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),u.name,u.id as usrid,u.online_status,u.profile_image,m.msg,u.gender from message m,userinfo u where u.email_verification_status=1 and u.status=1 and u.id=m.sender_id and (m.sender_id='"+senderid+"' and m.receiver_id='"+receiverid+"') and m.id ="+lastinsertid+" order by m.id asc ";
+  		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),u.name,u.id as usrid,u.online_status,u.profile_image,m.msg,u.gender from message m,userinfo u where  u.status=1 and u.id=m.sender_id and (m.sender_id='"+senderid+"' and m.receiver_id='"+receiverid+"') and m.id ="+lastinsertid+" order by m.id asc ";
   		
   		return template.query(sql, new ResultSetExtractor<List<Message>>() {
   			
@@ -233,7 +233,7 @@ public class MessageDao {
  		
  		String oppositegender=this.getoppositegender(userid);
  		
- 		return template.query("select t.* from (select id,name,online_status,profile_image,gender,u.matrimony_id from userinfo u where  u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.id='"+receiverid+"') t order by t.name asc", new ResultSetExtractor<List<User>>() {
+ 		return template.query("select t.* from (select id,name,online_status,profile_image,gender,u.matrimony_id from userinfo u where   u.status=1 and u.gender='"+oppositegender+"' and u.id='"+receiverid+"') t order by t.name asc", new ResultSetExtractor<List<User>>() {
  			
  			public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {
  				// TODO Auto-generated method stub
@@ -264,7 +264,7 @@ public class MessageDao {
      public List<Message> my_all_message(long userid,long pageid,long total)
  	{
  		
- 		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),m.sender_id as sender_id,m.receiver_id as receiver_id,u1.profile_image as sender_image,u2.profile_image as receiver_image,m.msg,u1.name as sendername,u2.name as receivername,u1.matrimony_id as sendermatrimonyid, u2.matrimony_id as receivermatrimonyid from message m inner join userinfo u1 on u1.id=m.sender_id inner join userinfo u2 on u2.id=m.receiver_id and u1.email_verification_status=1 and u1.status=1 and u2.email_verification_status=1 and u2.status=1 and (m.sender_id='"+userid+"' or m.receiver_id='"+userid+"') order by m.id desc limit "+(pageid-1)+","+total;
+ 		 String sql="select m.id as messageid,DATE_FORMAT((m.created_date_time),'%b %d %Y %H:%i:%s'),m.sender_id as sender_id,m.receiver_id as receiver_id,u1.profile_image as sender_image,u2.profile_image as receiver_image,m.msg,u1.name as sendername,u2.name as receivername,u1.matrimony_id as sendermatrimonyid, u2.matrimony_id as receivermatrimonyid from message m inner join userinfo u1 on u1.id=m.sender_id inner join userinfo u2 on u2.id=m.receiver_id and  u1.status=1 and  u2.status=1 and (m.sender_id='"+userid+"' or m.receiver_id='"+userid+"') order by m.id desc limit "+(pageid-1)+","+total;
  		
  		return template.query(sql, new ResultSetExtractor<List<Message>>() {
  			
@@ -305,7 +305,7 @@ public class MessageDao {
      // total record
      public Message my_all_message_total_record(long userid){    
     	 
-			String sql="select count(*) as totalrecord from message m inner join userinfo u1 on u1.id=m.sender_id inner join userinfo u2 on u2.id=m.receiver_id and u1.email_verification_status=1 and u1.status=1 and u2.email_verification_status=1 and u2.status=1 and (m.sender_id=? or m.receiver_id=?)";
+			String sql="select count(*) as totalrecord from message m inner join userinfo u1 on u1.id=m.sender_id inner join userinfo u2 on u2.id=m.receiver_id and u1.status=1 and  u2.status=1 and (m.sender_id=? or m.receiver_id=?)";
 		    
 			return template.queryForObject(sql, new Object[]{userid,userid},new BeanPropertyRowMapper<Message>(Message.class));    
 		} 

@@ -32,14 +32,14 @@
 		          		<img src="<c:url value="/resources/images/phverify.png" />" height="100px"  alt=""/>
 		          		</div>
 				       <div class="alert alert-success">
-						  <strong>Success!</strong> We have sent account activation link to your email. Please verify your email to login. 
+						  <strong>Success!</strong> We have sent account activation link to your email. Please verify your email. 
 						 
 						</div>
 						
 						<div class="alert alert-danger">
-						  <strong>Note!</strong> You must verify both your email and mobile no to login in 7pakebandha.in. 
+						  <strong>Note!</strong> Please verify both your email and mobile no and become a verified user in 7pakebandha.in. 
 						    
-						  <a class="text-theme-colored font-weight-600 font-12" href="login" style="padding: 7px;">Login</a>
+						  
 						</div>
 		          </div>
 		        
@@ -84,7 +84,7 @@
 		                		show_alert_success();
 		                		function show_alert_success()
 		                		{
-		                			swal("You have registered successfully", "We have sent account activation link to your email and verification code to your mobile. Please verify both your email and mobile no to login. ", "success");
+		                			swal("You have registered successfully", "We have sent account activation link to your email and verification code to your mobile. Please verify  your email,mobile no and become a verified user in 7pakebandha.in.", "success");
 		                		}
 		                	})
 		                	
@@ -133,6 +133,7 @@
 		              
 		              <div class="form-group pull-left mt-10">
 		                <button type="submit" class="btn btn-dark btn-lg chkmobilecode" style="background:rgb(59, 89, 152) !important">Verify Now</button>
+		             	<a class="text-theme-colored font-weight-600 font-12" href="login" style="padding: 15px;">Login</a>
 		              </div>
 		              
 		          

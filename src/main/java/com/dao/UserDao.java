@@ -415,26 +415,34 @@ public class UserDao {
 					});
 				}
 				//check login
+				
+				
+				
 				public Long  login_check(Login obj)
 				{
 					//check if user is email verified and active status
 					String sql = "SELECT u.id FROM userinfo u WHERE email=? AND password=?";
 					try {
-						long userId =template.queryForObject(sql, new Object[] { obj.getEmail(), getMd5(obj.getPassword()) },Long.class);
-					
-					if(userId >0)
-					{
-						String sql1 = "SELECT count(*) as count FROM userinfo u WHERE email=? AND password=? AND email_verification_status=1 AND phone_verification_status=1 AND status=1 ";
-						int count =template.queryForObject(sql, new Object[] { obj.getEmail(), getMd5(obj.getPassword()) },int.class);
-						if(count==1)
-						{
-							String query="update userinfo set online_status=1 where id='"+userId+"' ";  
-						    template.update(query);  
-						}
-						
-					}
-					
-					return userId;
+								long userId =template.queryForObject(sql, new Object[] { obj.getEmail(), getMd5(obj.getPassword()) },Long.class);
+							
+							if(userId >0)
+							{
+								/*
+								String sql1 = "SELECT count(*) as count FROM userinfo u WHERE email=? AND password=? AND email_verification_status=1 AND phone_verification_status=1 AND status=1 ";
+								int count =template.queryForObject(sql, new Object[] { obj.getEmail(), getMd5(obj.getPassword()) },int.class);
+								if(count==1)
+								{
+									String query="update userinfo set online_status=1 where id='"+userId+"' ";  
+								    template.update(query);  
+								}
+								*/
+								
+								String query="update userinfo set online_status=1 where id='"+userId+"' ";  
+							    template.update(query); 
+							}
+							
+							return userId;
+							
 					}catch (Exception e) {
 						return (long) 0;
 					}
@@ -452,7 +460,7 @@ public class UserDao {
 				{
 					String oppositegender="";
 					//get user details
-					String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+					String sql1 = "SELECT u.gender FROM userinfo u WHERE  status=1 and id=?";
 					try {
 					String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
 				
@@ -470,7 +478,7 @@ public class UserDao {
 					}
 					
 					
-					String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' ";
+					String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' ";
 					
 					//for new user
 					if(paramtype.equals("new"))
@@ -542,7 +550,7 @@ public class UserDao {
 					
 					String oppositegender="";
 					//get user details
-					String sql1 = "SELECT u.gender FROM userinfo u WHERE email_verification_status=1 and status=1 and id=?";
+					String sql1 = "SELECT u.gender FROM userinfo u WHERE  status=1 and id=?";
 					try {
 					String gender =template.queryForObject(sql1, new Object[] { userid },String.class);
 				
@@ -559,7 +567,7 @@ public class UserDao {
 						
 					}
 					
-					String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"' ";
+					String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"' ";
 					
 					//for new user
 					if(paramtype.equals("new"))
@@ -630,7 +638,7 @@ public class UserDao {
 				
 		public User getprofiledetails_by_username(String uname){ 
 			try {
-				String sql="select g.name as gonname,rash.name as rashiname, bdg.name as bloodgroupname,u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.email,u.phone_no,mt.name as mother_tongue_name,marst.name as martial_name,u.weight_info,ei.name as employed_in_name,u.express_yourself,ainc.income_value,u.is_mangalik  from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id inner join marital_status marst on marst.id=u.marital_status_id inner join employed_in ei on ei.id=u.employed_in_id inner join annual_income ainc on ainc.id=u.annual_income_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id left join gon_info g on u.gon_info_id=g.id left join rashi_info rash on u.rashi_info_id=rash.id left join blood_group bdg on u.blood_group_id=bdg.id where u.email_verification_status=1 and u.status=1 and u.matrimony_id=?";
+				String sql="select g.name as gonname,rash.name as rashiname, bdg.name as bloodgroupname,u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.email,u.phone_no,mt.name as mother_tongue_name,marst.name as martial_name,u.weight_info,ei.name as employed_in_name,u.express_yourself,ainc.income_value,u.is_mangalik  from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id inner join marital_status marst on marst.id=u.marital_status_id inner join employed_in ei on ei.id=u.employed_in_id inner join annual_income ainc on ainc.id=u.annual_income_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id left join gon_info g on u.gon_info_id=g.id left join rashi_info rash on u.rashi_info_id=rash.id left join blood_group bdg on u.blood_group_id=bdg.id where  u.status=1 and u.matrimony_id=?";
 			    
 				return template.queryForObject(sql, new Object[]{uname},new BeanPropertyRowMapper<User>(User.class));   
 			}catch(Exception e)
@@ -643,7 +651,7 @@ public class UserDao {
 		//profile details by id
 		
 		public User getprofiledetails_by_id(long uid){    
-			String sql="select g.name as gonname,rash.name as rashiname, bdg.name as bloodgroupname, u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.email,u.phone_no,mt.name as mother_tongue_name,marst.name as martial_name,u.weight_info,ei.name as employed_in_name,u.express_yourself,ainc.income_value,u.is_mangalik  from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id inner join marital_status marst on marst.id=u.marital_status_id inner join employed_in ei on ei.id=u.employed_in_id inner join annual_income ainc on ainc.id=u.annual_income_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id left join gon_info g on u.gon_info_id=g.id left join rashi_info rash on u.rashi_info_id=rash.id left join blood_group bdg on u.blood_group_id=bdg.id  where u.email_verification_status=1 and u.status=1 and u.id=?";
+			String sql="select g.name as gonname,rash.name as rashiname, bdg.name as bloodgroupname, u.matrimony_id,u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.email,u.phone_no,mt.name as mother_tongue_name,marst.name as martial_name,u.weight_info,ei.name as employed_in_name,u.express_yourself,ainc.income_value,u.is_mangalik  from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id inner join marital_status marst on marst.id=u.marital_status_id inner join employed_in ei on ei.id=u.employed_in_id inner join annual_income ainc on ainc.id=u.annual_income_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id left join gon_info g on u.gon_info_id=g.id left join rashi_info rash on u.rashi_info_id=rash.id left join blood_group bdg on u.blood_group_id=bdg.id  where u.status=1 and u.id=?";
 		    
 			return template.queryForObject(sql, new Object[]{uid},new BeanPropertyRowMapper<User>(User.class));    
 		}  
@@ -837,12 +845,12 @@ public class UserDao {
 						    
 						}
 						
-			}
+			} 
 			catch(Exception e)
 			{
 				System.out.println(e.getMessage());
 				return 0;
-			}
+			} 
 			
 			String sql = "SELECT count(*) as count FROM userinfo u WHERE phone_verification_code=? AND id=?";
 			try {

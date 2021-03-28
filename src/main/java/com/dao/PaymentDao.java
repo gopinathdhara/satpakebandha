@@ -128,7 +128,7 @@ public Boolean saveorderinfo(final Payment_Details e){
 
 	// edit profile details  
 	public Profile userdetails(long id){    
-	    String sql="select * from userinfo u where u.email_verification_status=1 and u.status=1 and id=?";    
+	    String sql="select * from userinfo u where  u.status=1 and id=?";    
 	    return template.queryForObject(sql, new Object[]{id},new BeanPropertyRowMapper<Profile>(Profile.class));    
 	}
 	
@@ -287,7 +287,7 @@ public Boolean saveorderinfo(final Payment_Details e){
 	     //view phone no if user is premium user
 	     public User get_phoneno_user(long receiver_id){ 
 	    	 
-				 String sql="select * from userinfo u where u.email_verification_status=1 and u.status=1 and id=?";    
+				 String sql="select * from userinfo u where  u.status=1 and id=?";    
 				 return template.queryForObject(sql, new Object[]{receiver_id},new BeanPropertyRowMapper<User>(User.class));    
 			
 	     }

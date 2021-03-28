@@ -34,7 +34,7 @@ public class HomeDao {
 	{
 		String oppositegender=obj.getGender();
 		
-		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"'";
+		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"'";
 		
 		//age
 		if(obj.getAgefrom()>0 && obj.getAgeto()>0)
@@ -116,7 +116,7 @@ public class HomeDao {
 		
 		String oppositegender=obj.getGender();
 		
-		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"'";
+		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"'";
 		
 				//age
 				if(obj.getAgefrom()>0 && obj.getAgeto()>0)
@@ -199,7 +199,7 @@ public class HomeDao {
 		
 		String oppositegender=gender;
 		
-		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"'";
+		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"'";
 		
 		//age
 		
@@ -324,7 +324,7 @@ public class HomeDao {
 		
 		String oppositegender=gender;
 		
-		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"'";
+		String sql="select u.id,u.name,u.dob,u.gender,u.profile_image,ocpi.name as occupation_name,heig.height_value,rg.name as religion_name,ca.name as caste_name,hghed.name as highest_education,cunt.name as country_name,sts.name as state_name,cte.name as city_name,u.username,u.matrimony_id,mt.name as mother_tonue_name from userinfo u inner join occupation_info ocpi on u.occupation_info_id=ocpi.id inner join height_info heig on heig.id=u.height_info_id inner join religion rg on rg.id=u.religion_id inner join highest_education hghed on hghed.id=u.highest_education_id inner join countries cunt on cunt.id=u.country_id inner join mother_tongue mt on mt.id=u.mother_tongue_id  left join states sts on sts.id=u.state_id left join cities cte on cte.id=u.city_id left join caste_info ca on ca.id=u.caste_info_id where  u.status=1 and u.gender='"+oppositegender+"' and u.id <'"+lastpostid+"'";
 		
 		//age
 		
@@ -452,7 +452,7 @@ public class HomeDao {
 				
 				String oppositegender=gender;
 				
-				return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from mother_tongue m inner join userinfo u on u.mother_tongue_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.mother_tongue_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+				return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from mother_tongue m inner join userinfo u on u.mother_tongue_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.mother_tongue_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 					public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 						// TODO Auto-generated method stub
 						List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -479,7 +479,7 @@ public class HomeDao {
 				
 				String oppositegender=gender;
 				
-				return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from marital_status m inner join userinfo u on u.marital_status_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.marital_status_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+				return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from marital_status m inner join userinfo u on u.marital_status_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.marital_status_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 					public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 						// TODO Auto-generated method stub
 						List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -507,7 +507,7 @@ public class HomeDao {
 				
 				String oppositegender=gender;
 				
-				return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from religion m inner join userinfo u on u.religion_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.religion_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+				return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from religion m inner join userinfo u on u.religion_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.religion_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 					public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 						// TODO Auto-generated method stub
 						List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -535,7 +535,7 @@ public class HomeDao {
 						
 						String oppositegender=gender;
 						
-						return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from caste_info m inner join userinfo u on u.caste_info_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.caste_info_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+						return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from caste_info m inner join userinfo u on u.caste_info_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.caste_info_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 							public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 								// TODO Auto-generated method stub
 								List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -562,7 +562,7 @@ public class HomeDao {
 						
 						String oppositegender=gender;
 						
-						return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from highest_education m inner join userinfo u on u.highest_education_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.highest_education_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+						return template.query("select t.* from (select m.id,m.name,count(m.id) as countitem from highest_education m inner join userinfo u on u.highest_education_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.highest_education_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 							public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 								// TODO Auto-generated method stub
 								List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -590,7 +590,7 @@ public class HomeDao {
 						
 						String oppositegender=gender;
 						
-						return template.query("select t.* from (select m.id,m.income_value as name,count(m.id) as countitem from annual_income m inner join userinfo u on u.annual_income_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.annual_income_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+						return template.query("select t.* from (select m.id,m.income_value as name,count(m.id) as countitem from annual_income m inner join userinfo u on u.annual_income_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.annual_income_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 							public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 								// TODO Auto-generated method stub
 								List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -617,7 +617,7 @@ public class HomeDao {
 						
 						String oppositegender=gender;
 						
-						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from employed_in m inner join userinfo u on u.employed_in_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.employed_in_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from employed_in m inner join userinfo u on u.employed_in_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.employed_in_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 							public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 								// TODO Auto-generated method stub
 								List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -644,7 +644,7 @@ public class HomeDao {
 						
 						String oppositegender=gender;
 						
-						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from occupation_info m inner join userinfo u on u.occupation_info_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' group by u.occupation_info_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from occupation_info m inner join userinfo u on u.occupation_info_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' group by u.occupation_info_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 							public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 								// TODO Auto-generated method stub
 								List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -671,7 +671,7 @@ public class HomeDao {
 						
 						String oppositegender=gender;
 						
-						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from countries m inner join userinfo u on u.country_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 group by u.country_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from countries m inner join userinfo u on u.country_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 group by u.country_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 							public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 								// TODO Auto-generated method stub
 								List<Regular_Search> mother_tongue_List = new ArrayList();
@@ -698,7 +698,7 @@ public class HomeDao {
 						
 						String oppositegender=gender;
 						
-						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from states m inner join userinfo u on u.state_id=m.id where u.email_verification_status=1 and u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 group by u.state_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
+						return template.query("select t.* from (select m.id,m.name as name,count(m.id) as countitem from states m inner join userinfo u on u.state_id=m.id where  u.status=1 and u.gender='"+oppositegender+"' and u.country_id=101 group by u.state_id) t order by t.name asc", new ResultSetExtractor<List<Regular_Search>>() {
 							public List<Regular_Search> extractData(ResultSet rs) throws SQLException, DataAccessException {
 								// TODO Auto-generated method stub
 								List<Regular_Search> mother_tongue_List = new ArrayList();
