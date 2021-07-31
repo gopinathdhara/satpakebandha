@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.beans.Common_Info" %> 
-  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=6.5" />" >
+  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=6.7" />" >
 <% 
 int userid=0;
 try
