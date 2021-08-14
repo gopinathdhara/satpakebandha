@@ -68,6 +68,10 @@ menuzord.red .menuzord-menu > li.active > a{
    
 	
 }
+.lovecoupleicon{
+	height: 70px;
+	margin-left: 70px;
+}
 .advsrapplydv{
 	margin-top:20px;
 }
@@ -496,6 +500,10 @@ a:hover{
 @media only screen and (max-width: 768px) {
 .makepaybtn{
 	margin-top:10px;
+}
+.lovecoupleicon{
+	margin-left: 5px;
+	height: 50px;
 }
 }  
 .otherdetails{

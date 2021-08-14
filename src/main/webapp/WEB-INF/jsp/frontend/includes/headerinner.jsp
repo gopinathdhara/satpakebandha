@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.beans.Common_Info" %> 
-  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=8.0" />" >
+  <link  rel="stylesheet" href="<c:url value="resources/css/mycustominnerf9e3.css?v=8.3" />" >
 <% 
 int userid=0;
 try
@@ -32,7 +32,7 @@ String baseURL = url.substring(0, url.length() - request.getRequestURI().length(
             <div id="menuzord-right" class="menuzord red">  <a class=" pull-left flip font-great-vibes " href="<%=Common_Info.liveurl %>">  <img src="<c:url value="/resources/images/logo.png" />" class="matsitelogo" alt=""/></a>
 			
               <div id="side-panel-trigger" class="side-panel-trigger"><a href="#"><i class="fa fa-bars font-24 text-gray-silver" style="display:none"></i></a></div>
-			  <img src="<c:url value="/resources/icons/lovecouple.png" />" alt="" style="height: 70px;margin-left: 70px;"/>
+			  <img src="<c:url value="/resources/icons/lovecouple.png" />" alt="" class="lovecoupleicon" />
               <ul class="menuzord-menu">
               
               <!-- class="active" -->
