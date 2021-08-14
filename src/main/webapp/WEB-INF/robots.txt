@@ -1,2 +1,3 @@
 User-agent: *
-allow: 
+allow:
+Sitemap: https://www.7pakebandha.in/sitemap.xml

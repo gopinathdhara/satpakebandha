@@ -73,7 +73,7 @@
             
             <div class="col-md-1"></div>
             
-            	 <div class="col-md-3" style="border: 1px solid #d1d1d1;padding: 20px;">
+            	 <div class="col-md-3 advsdbar" style="border: 1px solid #d1d1d1;padding: 20px;">
 			        <form action="profiledetails" method="get" name="srbyidform">
 			        		<div class="form-group col-md-12">
 					                  <label for="form_choose_username"> Search By ID </label>

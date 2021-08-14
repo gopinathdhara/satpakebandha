@@ -101,7 +101,8 @@
           <div class="row">
           <div class="col-md-12">
           <!-- text-white -->
-            <h2 class="mt-0 mb-30 momes homesrchd">Please search for your perfect match :</h2>
+            <h1 class="mt-0 mb-30 momes homesrchd1">The Best Trusted Bengali Matrimony Site</h1> 
+            <h3 class="mt-0 mb-30 momes homesrchd">Please search for your perfect match :</h3>
             <form id="rsvp_form" name="rsvp_form" class="form-transparent form-text-white" method="get" action="homesearch">
               <div class="row">
                 <div class="col-sm-2">
@@ -474,7 +475,7 @@
 							<p class="homabtp">
 							 <span class="wlcmhom"> Welcome to 7pakebandha.in</span><br/>
 
-									The No. 1 Matrimony Site for Bengalis - 7pakebandha.in, 
+									The Best Trusted Matrimony Site for Bengalis - 7pakebandha.in, 
 									is one of the leading and most trusted matrimony websites in India.
 									
 									It is a free Indian matrimony with the mission of providing 
@@ -485,6 +486,8 @@
 									
 									It has earned the goodwill of millions of Bengalis worldwide and
 									has become the most trusted choice when it comes to finding a life partner. 
+									<br/><br/>
+									Are you Looking for Bengali Matrimony in Howrah? Find Lakhs of verified and perfect Howrah Brides / Grooms for Marriage on 7pakebandha  - The Best Matrimony site. Register FREE!
 									<span id="abt_dots">...</span>
 									<span id="abt_more">
 									<br/><br/>You can easily find lakhs of quality profiles from across cities in West Bengal 
@@ -510,7 +513,7 @@
 									We need your hearty cooperation and congratulation to fulfill our dream. 
 									
 									<br/><br/>
-									7pakebandha.in acts as a platform to enable any user to themselves register on it 
+									The Best Trusted Matrimony Site for Bengalis - 7pakebandha.in acts as a platform to enable any user to themselves register on it 
 									(by filling the mandatory fields and optional fields, if any) to voluntarily search
 									for profile(s) from the database of already registered users. 
 									you must have a valid/operational mobile phone number and an email id. 

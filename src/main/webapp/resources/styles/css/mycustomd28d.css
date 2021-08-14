@@ -54,10 +54,16 @@
 	color: black !important;
     border: 1px solid black;
 }
+.homesrchd1{
+	color:#000;
+	font-family: cursive;
+	font-size:23px;
+    text-transform:capitalize;
+}
 .homesrchd{
 	color:#000;
 	font-family: 'Poppins', sans-serif;
-	font-size:30px;
+	font-size:19px;
     text-transform:capitalize;
 }
 .usr_fnm{

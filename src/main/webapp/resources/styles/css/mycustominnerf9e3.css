@@ -508,7 +508,8 @@ a:hover{
 	border: 1px solid #ccc;
     padding: 15px;
     border-radius:10px;
-	background: #f3fbfa;
+	background: #fff;
+	box-shadow: 0px 1px 9px 0px #ddd;
 }
 .prfismangalik{
 	color: blue;
@@ -535,13 +536,14 @@ a:hover{
 }
 
 #containr >.post {
-	padding: 15px;
-    margin: 5px;
+	padding: 10px;
+    margin: 10px; 
     border:1px solid #ccc;
     text-align: left; 
-	/*background-color: #fff;*/
-    background-color: #ebe1d7;
+	background-color: #fff;
+    /*background-color: #ebe1d7 !important;*/
     border-radius: 20px;
+	box-shadow: 0px 1px 9px 0px #ddd;
 } 
 
 #containr >.post:hover {

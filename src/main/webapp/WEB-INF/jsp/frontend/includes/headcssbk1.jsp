@@ -2,13 +2,39 @@
     pageEncoding="ISO-8859-1"%>
 <head>
 <!-- Meta Tags -->
-<title>Best Trusted Bengali Matrimony Site in Howrah, Kolkata - Search lakhs of Kolkata Brides / Grooms- 7pake Bandha</title>
-<meta name="description" content="Are you Searching for Best Bengali Matrimony in Kolkata? Find your Special Someone on 7pake Bandha - the Most Trusted Brand. To find Verified Profiles, Register Free!">
-<meta name="keywords" content="best trusted bengali matrimony site, bengali matrimony,matrimony sites,shaadi,bengali marriage website,bengali shaadi">
+<title>Best Trusted Bengali Matrimony Site in Howrah, Kolkata - 7pake Bandha</title>
+<meta name="description" content="Waiting for your Best Perfect Life Partner? Come 7pake Bandha, is the Trusted Bengali Matrimony Site for Bengalis in Howrah, Kolkata. Connecting Thousands of Bengali life-partner." />
+<meta name="DC.Title" content="Best Trusted Bengali Matrimony Site for Bengalis in Howrah, Kolkata - 7pake Bandha" />
+<meta name="DC.Description" content="Waiting for your Best Perfect Life Partner? Come 7pake Bandha, is the Trusted Bengali Matrimony Site for Bengalis in Howrah, Kolkata. Connecting Thousands of Bengali life-partner." />
+<meta name="robots" content="all, index, follow"/>
+<meta name="robots" content="noodp,noydir"/>
+<meta name="geo.region" content="IN-WB" />
+<meta name="geo.placename" content="Kolkata" />
+<meta name="geo.position" content="22.572672;88.363882" />
+<meta name="ICBM" content="22.572672, 88.363882" />
+<meta name="geo.region" content="IN-WB" />
+<meta name="geo.placename" content="Howrah" />
+<meta name="geo.position" content="22.57363;88.325105" />
+<meta name="ICBM" content="22.57363, 88.325105" />
+<meta name="geo.region" content="IN-WB" />
+<meta name="geo.position" content="22.996495;87.685588" />
+<meta name="ICBM" content="22.996495, 87.685588" />
+<meta name="google-site-verification" content="BDVKKS_HranI2wbwFbyW7tS4SJgpsak6mhodSAAhywc" />
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>  
-   
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9RYBLDFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S9RYBLDFVF');
+</script>
+
+
+
 <!-- Favicon and Touch Icons -->
 <link href="<c:url value="/resources/images/favicon/favicon.ico" />" rel="shortcut icon"  sizes="60x60">
 <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
@@ -47,7 +73,7 @@
 
 <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
 
- <link  rel="stylesheet" href="<c:url value="/resources/css/mycustomd28d.css?v=7.1" />" >
+ <link  rel="stylesheet" href="<c:url value="/resources/css/mycustomd28d.css?v=6.7" />" >
  
  <link rel="stylesheet" href="<c:url value="/resources/css/font-awesome1.min.css?v=1.0" />">
  <link rel="stylesheet" href="<c:url value="/resources/css/font-awesome.min.css?v=1.0" />">
