@@ -912,11 +912,11 @@ $(document).ready(function(){
 			  success: function(html){
 				  
 				  var response = JSON.parse(html);
-				  
+				  var count_data=0;	
 				  var str='';
 				
 				  $.each(response, function (key, val) {
-					  
+					  count_data++;
 					  if(val.gender=='Female')
 					  {
 					 	 //var demoimg=$("#demousrimg").val()+'demouser3.png';
@@ -964,7 +964,12 @@ $(document).ready(function(){
 						 
 					 
 				  });
-				  
+				  if(count_data==0)
+				  {
+				
+				 	 str='<div class="post clearfix mb-50"><p style="text-align: center;font-size: 17px;">No Record Found</p></div>';
+				 	 //$("#recmsg").html("");
+				  }
 				  //console.log(str);
 				  
 				  $("#containr").html(str);
