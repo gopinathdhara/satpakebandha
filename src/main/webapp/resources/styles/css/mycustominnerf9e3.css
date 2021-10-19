@@ -51,6 +51,7 @@ menuzord.red .menuzord-menu > li.active > a{
 @media only screen and (max-width: 768px) {
 .rspnsurimg{
 	width:50%;
+	max-height: 200px;
 }
 }
 .bordrbox{
@@ -632,4 +633,7 @@ input, select, textarea{
 }
 .mc-image {
 	width:100%!important;
+}
+.rspnsurimg{
+	max-height: 200px;
 }
