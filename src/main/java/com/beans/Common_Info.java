@@ -17,6 +17,9 @@ public class Common_Info {
 	public static String secretkey="K1ymGpj8pmr9ehRb2HF0Ujkc";
 	public static int perpage=5;
 	public static int adminperpage=10;
-	public static String clicksend_email="siteadmin@7pakebandha.in";
-	public static String clicksend_apikey="31551A39-41AF-7FB3-B0AF-EE34147BEE33";
+	
+	//click send
+	public static String clicksend_email="siteadmin@7pakebandha.in"; 
+	//public static String clicksend_apikey="31551A39-41AF-7FB3-B0AF-EE34147BEE33";
+	public static String clicksend_apikey="5326A352-5420-A381-9F66-FACE78641584";  
 }
