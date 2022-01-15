@@ -20,7 +20,7 @@ long pageid=Long.parseLong(request.getParameter("pageid").toString());
                         <h1 class="mt-4">All Users</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tables</li>
+                            <!-- <li class="breadcrumb-item active">Tables</li> -->
                         </ol>
                         
                         <div class="card mb-4">
@@ -39,6 +39,7 @@ long pageid=Long.parseLong(request.getParameter("pageid").toString());
                                                  <th>Phone No</th>
                                                  <th>Email Verification </th>
                                                  <th>Status</th>
+                                                 <th>Profile Image</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -49,6 +50,7 @@ long pageid=Long.parseLong(request.getParameter("pageid").toString());
                                                  <th>Phone No</th>
                                                   <th>Email Verification </th>
                                                  <th>Status</th>
+                                                 <th>Profile Image</th>
                                                 
                                             </tr>
                                         </tfoot>
@@ -72,6 +74,7 @@ long pageid=Long.parseLong(request.getParameter("pageid").toString());
 													<c:if test = "${mylist.getStatus()==0}">
 													<td ><a href="javascript:void(0)" class="actsts" id="actsts-${mylist.getId()}-1" style="color: red;font-weight: bold;">Inactive</a></td>
 													</c:if>
+													<td><a href="adminprofilepicupload?userid=${mylist.getId()}" style="color: blue;font-weight: bold;"><i class="fas fa-edit"></i></a></td>
 	                                            </tr>
                                            </c:forEach> 
                                         </tbody>

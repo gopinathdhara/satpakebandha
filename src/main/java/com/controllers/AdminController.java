@@ -1,6 +1,10 @@
 package com.controllers;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException; 
 import java.io.UnsupportedEncodingException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.HashMap;
@@ -8,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -23,6 +28,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.beans.City;
 import com.beans.Common_Info;
@@ -33,6 +40,7 @@ import com.beans.Profile;
 import com.beans.State;
 import com.beans.User;
 import com.dao.AdminDao;
+import com.dao.UserActivityDao;
 import com.dao.UserDao;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -41,9 +49,12 @@ import com.google.gson.GsonBuilder;
 @Controller 
 
 public class AdminController {
-	
+	@Autowired    
+    UserDao udao1;//will inject dao from XML file 
 	@Autowired    
 	AdminDao dao;//will inject dao from XML file 
+	@Autowired    
+	UserActivityDao udao;//will inject dao from XML file 
 	
 	//used for login
 	@RequestMapping("/admin")    
@@ -357,5 +368,91 @@ public class AdminController {
 		     response.getWriter().write(jsonFromJavaArrayList);
 	           
 	    } 
+	 
+	 		//profile image upload by admin for user
+			@RequestMapping("/adminprofilepicupload")    
+		    public String profilepicupload(Model m,HttpSession session,HttpServletRequest request){ 
+				
+				//###########check login###############
+				long adminid=(long) 0;
+				try
+				{
+				 adminid=Long.parseLong(session.getAttribute("admin_usr_id").toString());
+				}
+				catch(Exception e)
+				{
+						adminid=(long) 0;
+					 return "redirect:/admin";
+					 
+				}
+				//###########check login###############
+				
+				long userid=(long) 0;
+				userid=Long.parseLong(request.getParameter("userid").toString());
+				
+				User uobj = udao1.getprofiledetails_by_id(userid);    
+			    m.addAttribute("uobj",uobj); 
+				
+		        return "backend/userprofilepicupload";   
+		    } 
+			
+			@RequestMapping(value="/userprofilepicsavebyadmin",method = RequestMethod.POST)    
+		    public String profilepicsave(@RequestParam CommonsMultipartFile file,Model m,HttpServletRequest request,HttpServletResponse response,HttpSession session) throws Exception{
+			
+				//###########check login###############
+				long userid=(long) 0;
+				userid=Long.parseLong(request.getParameter("userid").toString());
+				System.out.println("userid");
+				System.out.println(userid);
+				
+				String currentDirectory = System.getProperty("user.dir");
+				
+			      //System.out.println("The current working directory is " + currentDirectory);
+				
+				ServletContext context = session.getServletContext();
+				
+				
+			    //String path = context.getRealPath(UPLOAD_DIRECTORY); 
+				//String path = "C:/Users/GOPINATH/eclipse-workspace1/satpakebandhaproject/src/main/webapp/resources/styles/userprofileimages";
+				//String path = context.getRealPath("/resources/styles/userprofileimages/");
+				
+				
+				
+				String url = request.getRequestURL().toString();
+				String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";     
+				
+				//System.out.print(baseURL);
+				String path="";
+				
+				if(baseURL.contains("localhost"))
+				{
+					 path = Common_Info.imgupload_local_url;
+				}
+				else
+				{
+					 path = context.getRealPath("/resources/styles/userprofileimages/"); 
+				}
+				
+				Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+				String filename = timestamp.getTime()+file.getOriginalFilename();  
+			  
+			    //System.out.println(path+" "+filename);        
+			  
+			    byte[] bytes = file.getBytes();  
+			    BufferedOutputStream stream =new BufferedOutputStream(new FileOutputStream(  
+			         new File(path + File.separator + filename)));  
+			    stream.write(bytes);  
+			    stream.flush();  
+			    stream.close();  
+			    
+			    //setter method
+			    User obj=new User();
+			    obj.setProfile_image(filename);
+			    obj.setId(userid);
+			    //call dao
+			    udao.updateprofileimage(obj);
+			    
+	            return "redirect:/adminprofilepicupload?userid="+userid;   
+		}
 	 
 }

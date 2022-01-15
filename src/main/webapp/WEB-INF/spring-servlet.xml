@@ -47,7 +47,7 @@
 		<property name="username" value="pakeband" />   
 		<property name="password" value="7pakebandprojectdb" /> 
 		
-		</bean>  
+		</bean> 
 		
 		
 		<!--<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
